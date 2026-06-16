@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    background: #fff3e6;
+    color: #3b1f1f;
+}
+
+nav {
+    background: #5c3a2e;
+    text-align: center;
+    padding: 20px;
+}
+
+nav a {
+    color: #ffe8d6;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
+}
+
+nav a:visited {
+    color: #ffe8d6;
+}
+
+nav a:hover {
+    color: #ffd6e0;
+}
+
+/* TÍTULO */
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 42px;
+    color: #5c3a2e;
+}
+
+form {
+    background: #ffd6e0;
+    width: 500px;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    margin-top: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background: #5c3a2e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background: #3d241b;
+}
+
+@media(max-width: 600px) {
+
+    h1 {
+        font-size: 32px;
+        padding: 0 10px;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+}
