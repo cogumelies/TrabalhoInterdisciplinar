@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocoholic Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>Faça Login</h1>
+
+    <label for="">Email:</label>
+    <input type="email" name="email" id="" required oninvalid="this.setCustomValidity('Digite um email válido')"
+        oninput="this.setCustomValidity('') 
+    pattern='[@]' ">
+
+    <label for="">Senha:</label>
+    <input type="password" name="senha" id="" required oninvalid="this.setCustomValidity('A senha está inválida')"
+        oninput="this.setCustomValidity('')">
+    
+    <a href="./produtos.html">
+            <button>Entrar</button>
+    </a>
+
+    <a href="./cadastro.html">
+        <button>Cadastre-se</button>
+    </a>
+
+    <a href="./forgetpassword.html">
+        <h3>Esqueci minha senha</h3>
+    </a>
+       
+</body>
+
+</html>
