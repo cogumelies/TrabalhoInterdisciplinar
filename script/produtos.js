@@ -1,4 +1,4 @@
-const produtos = [
+var vetProdutos = [
     {
         nome: "Caixa Artesanal Bombons Napolitano, 175g",
         preco: 34.99,
