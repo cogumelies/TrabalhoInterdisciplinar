@@ -32,14 +32,14 @@
     --raio-20: 20px;
 }
 
-/* reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* corpo */
+
 body {
     margin: 0;
     font-family: var(--fonte-principal);
@@ -47,7 +47,7 @@ body {
     color: var(--marrom-texto);
 }
 
-/* header */
+
 header {
     background: var(--marrom-principal);
     color: var(--branco);
@@ -55,7 +55,6 @@ header {
     padding: 20px;
 }
 
-/* menu */
 nav {
     background: var(--marrom-principal);
     text-align: center;
@@ -80,19 +79,17 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* principal */
+
 main {
     background: var(--fundo-main);
     padding: 50px 20px;
     min-height: 100vh;
 }
 
-/* seções */
 section {
     margin-bottom: 40px;
 }
 
-/* textos */
 h1 {
     text-align: center;
     margin: 30px 0 60px;
@@ -115,7 +112,6 @@ p {
     color: var(--marrom-texto);
 }
 
-/* botões */
 button,
 .btn {
     background: var(--marrom-principal);
@@ -134,7 +130,6 @@ button:hover,
     background: var(--marrom-escuro);
 }
 
-/* footer */
 footer {
     background: var(--marrom-footer);
     color: var(--creme-claro);
@@ -142,12 +137,10 @@ footer {
     padding: 20px;
 }
 
-/* logo */
 .img-pequena {
     width: 100px;
 }
 
-/* produtos */
 .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -157,7 +150,6 @@ footer {
     margin-top: 30px;
 }
 
-/* cards */
 .card {
     text-align: center;
     transition: 0.3s;
@@ -167,7 +159,6 @@ footer {
     transform: translatey(-5px);
 }
 
-/* card produto */
 .produtos .card {
     width: 220px;
     background: var(--branco);
@@ -176,7 +167,6 @@ footer {
     box-shadow: var(--sombra-card);
 }
 
-/* imagem card */
 .card img {
     width: 100%;
     height: 260px;
@@ -204,14 +194,12 @@ footer {
     margin: 15px 10px 20px;
 }
 
-/* preço */
 .preco {
     color: var(--preco);
     font-size: 24px;
     font-weight: bold;
 }
 
-/* botão secundário */
 .btn-secundario {
     background: transparent;
     border: 2px solid var(--creme-claro);
@@ -222,7 +210,6 @@ footer {
     color: var(--marrom-principal);
 }
 
-/* pre */
 pre {
     background: var(--branco);
     padding: 20px;
@@ -233,7 +220,6 @@ pre {
     overflow-x: auto;
 }
 
-/* imagens */
 .imagens {
     display: flex;
     gap: 20px;
@@ -245,7 +231,6 @@ pre {
     border-radius: var(--raio-10);
 }
 
-/* páginas */
 .header-paginas {
     background: var(--marrom-principal);
     color: var(--branco);
@@ -263,7 +248,6 @@ pre {
     margin: 0 10px;
 }
 
-/* título */
 .titulo-header {
     padding: 40px 20px 60px;
 }
@@ -282,7 +266,6 @@ pre {
     color: var(--branco);
 }
 
-/* produtos título */
 .titulo-produtos {
     background: var(--marrom-principal);
     color: var(--branco);
@@ -304,7 +287,6 @@ pre {
     margin-left: 0;
 }
 
-/* hero */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -372,7 +354,6 @@ pre {
     box-shadow: var(--sombra-card);
 }
 
-/* sobre */
 .sobre {
     display: flex;
     justify-content: center;
@@ -401,7 +382,6 @@ pre {
     color: var(--marrom-texto);
 }
 
-/* depoimentos */
 .depoimentos {
     margin-top: 80px;
     text-align: center;
@@ -422,7 +402,6 @@ pre {
     box-shadow: var(--sombra-card);
 }
 
-/* cta */
 .cta {
     background: var(--marrom-principal);
     color: var(--branco);
@@ -444,7 +423,6 @@ pre {
     color: var(--branco);
 }
 
-/* formulário */
 form {
     background: var(--rosa-claro);
     width: 500px;
@@ -461,7 +439,6 @@ label {
     color: var(--marrom-texto);
 }
 
-/* campos */
 input,
 select,
 textarea {
@@ -500,7 +477,6 @@ input[type="submit"]:hover {
     background: var(--marrom-escuro);
 }
 
-/* mapa */
 iframe {
     display: block;
     width: 100%;
@@ -512,7 +488,6 @@ iframe {
     box-shadow: var(--sombra-suave);
 }
 
-/* tablet */
 @media(max-width: 900px) {
 
     .hero {
@@ -540,7 +515,6 @@ iframe {
 
 }
 
-/* celular */
 @media(max-width: 600px) {
 
     h1 {
@@ -570,8 +544,7 @@ iframe {
     }
 
 }
-
-/* celular pequeno */
+ 
 @media(max-width: 500px) {
 
     nav a {
@@ -586,8 +559,7 @@ iframe {
     .card,
     .produtos .card,
     .cards-beneficios .card,
-    .depoimentos .card
-     {
+    .depoimentos .card {
         width: 100%;
     }
 
