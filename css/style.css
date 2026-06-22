@@ -586,7 +586,8 @@ iframe {
     .card,
     .produtos .card,
     .cards-beneficios .card,
-    .depoimentos .card {
+    .depoimentos .card
+     {
         width: 100%;
     }
 
