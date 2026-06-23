@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro de produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="classHeader">
+        <nav class="menu">
+            <a href="land.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>🍫 Cadastro de Chocolates</h1>
+
+        <form id="formCadastroChocolates" class="formCadastroChocolates">
+
+            <label for="inNomeChocolate">Chocolate:</label>
+            <input type="text" id="inNomeChocolate" required
+                oninvalid="this.setCustomValidity('Insira um nome para o chocolate!')"
+                oninput="this.setCustomValidity('')">
+
+            <label for="sltCategoria">Categoria:</label>
+            <select id="sltCategoria" required oninvalid="this.setCustomValidity('Selecione uma categoria!')"
+                oninput="this.setCustomValidity('')">
+                <option value="" selected disabled> Selecione: </option>
+                <option value="Bombons"> Bombons </option>
+                <option value="Barras"> Barras </option>
+                <option value="Trufas"> Trufas </option>
+            </select>
+
+            <label for="sltTipo"> Tipo: </label>
+            <select id="sltTipo" required oninvalid="this.setCustomValidity('Selecione um tipo!')"
+                oninput="this.setCustomValidity('')">
+                <option value="" selected disabled> Selecione: </option>
+                <option value="AoLeite"> Ao Leite </option>
+                <option value="Amargo"> Amargo </option>
+                <option value="Branco"> Branco </option>
+                <option value="Zero Açúcar"> Zero Açúcar </option>
+                <option value="Recheado"> Recheado </option>
+                <option value="Misto"> Misto</option>
+            </select>
+
+            <label for="inPrecoChocolate">preço:</label>
+            <input type="number" id="inPrecoChocolate" min="0.01" step="0.01" required
+                oninvalid="this.setCustomValidity('Insira um valor válido!')" oninput="this.setCustomValidity('')">
+
+            <label for="inEstoque"> Estoque </label>
+            <select id="sltEstoque" required oninvalid="this.setCustomValidity('Selecione o estoque!')"
+                oninput="this.setCustomValidity('')">
+                <option value="Disponível"> Disponível </option>
+                <option value="Estoque Baixo"> Estoque Baixo </option>
+                <option value="Esgotado"> Esgotado </option>
+
+            </select>
+            <div class="botoesCrud">
+                <button type="submit"> Cadastrar Produto </button>
+                <button type="button" id="btnMostrar"> Mostrar Todos os Produtos </button>
+                <button type="button" id="btnConsultar"> Consultar Produto </button>
+                <button type="button" id="btnAlterar"> Alterar Produto </button>
+                <button type="button" id="btnExcluir"> Excluir Produto </button>
+                <button type="button" id="btnListar"> Listar Produtos Cadastrados </button>
+            </div>
+
+        </form>
+        <p id="outMensagem"></p>
+
+        <pre id="outCadastro"> </pre>
+        <pre id="outSessao"> </pre>
+    </main>
+
+    <footer class="rodape">
+
+        <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
+
+        <p>Contato: chocoholic@gmail.com</p>
+
+        <p>© 2026 Chocoholic • Todos os direitos reservados</p>
+
+    </footer>
+
+
+    <script src="script/cadastrochocolate.js"></script>
+</body>
+
+</html>
