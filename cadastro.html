@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Chocoholic</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="land.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+
+    <main>
+        <h1>🍫 Cadastro Chocoholic</h1>
+
+        <form id="formCadastro">
+
+            <label for="inNome">Nome:</label><br>
+            <input type="text" id="inNome" name="nome_cliente" required><br><br>
+
+            <label for="inEmail">Email:</label><br>
+            <input type="email" id="inEmail" name="email_cliente" required><br><br>
+
+            <label for="inSenha">Senha:</label><br>
+            <input type="password" id="inSenha" name="senha_cliente" minlength="6" required><br><br>
+
+            <label for="inIdade">Idade:</label><br>
+            <input type="number" id="inIdade" name="idade_cliente" min="1" max="120" required><br><br>
+
+            <label for="inTipoChocolate">Tipo de chocolate favorito:</label><br>
+            <select id="inTipoChocolate" name="tipo_chocolate" required>
+                <option value="">Selecione</option>
+                <option value="ao leite">Ao leite</option>
+                <option value="amargo">Amargo</option>
+                <option value="branco">Branco</option>
+            </select>
+            <br><br>
+
+            <p>Frequência de consumo:</p>
+
+            <input type="radio" id="freqDiario" name="frequencia" value="diario" required>
+            <label for="freqDiario">Diário</label><br>
+
+            <input type="radio" id="freqSemanal" name="frequencia" value="semanal">
+            <label for="freqSemanal">Semanal</label><br>
+
+            <input type="radio" id="freqMensal" name="frequencia" value="mensal">
+            <label for="freqMensal">Mensal</label><br><br>
+
+            <p>Quais produtos você gosta?</p>
+
+            <input type="checkbox" id="prefTrufas" name="preferencias" value="trufas">
+            <label for="prefTrufas">Trufas</label><br>
+
+            <input type="checkbox" id="prefBarras" name="preferencias" value="barras">
+            <label for="prefBarras">Barras</label><br>
+
+            <input type="checkbox" id="prefBombons" name="preferencias" value="bombons">
+            <label for="prefBombons">Bombons</label><br><br>
+
+            <input type="submit" value="Enviar">
+
+            <p id="outSaida"></p>
+
+            <div class="link-login">
+                <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
+            </div>
+
+        </form>
+    </main>
+
+    <footer class="rodape">
+        <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
+        <p>Contato: chocoholic@gmail.com</p>
+        <p>© 2026 Chocoholic • Todos os direitos reservados</p>
+    </footer>
+
+    <script src="./script/cadastro.js"></script>
+</body>
+
+</html>
