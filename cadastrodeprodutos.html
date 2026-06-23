@@ -24,34 +24,61 @@
 
         <form id="formCadastroChocolates" class="formCadastroChocolates">
 
-            <label for="cadNomeChocolate">chocolate:</label>
-            <input type="text" id="cadNomeChocolate" required
-                oninvalid="this.setCustomValidity('Insira um nome para o chocolate válido!')"
+            <label for="inNomeChocolate">Chocolate:</label>
+            <input type="text" id="inNomeChocolate" required
+                oninvalid="this.setCustomValidity('Insira um nome para o chocolate!')"
                 oninput="this.setCustomValidity('')">
 
-            <label for="cadPrecoChocolate">preço:</label>
-            <input type="number" id="cadPrecoChocolate" min="0.01" step="0.01" required
-                oninvalid="this.setCustomValidity('Insira um valor válido!')"
+            <label for="sltCategoria">Categoria:</label>
+            <select id="sltCategoria" required oninvalid="this.setCustomValidity('Selecione uma categoria!')"
                 oninput="this.setCustomValidity('')">
+                <option value="" selected disabled> Selecione: </option>
+                <option value="Bombons"> Bombons </option>
+                <option value="Barras"> Barras </option>
+                <option value="Trufas"> Trufas </option>
+            </select>
 
-            <label for="cadDescricao">descrição do produto:</label>
-            <textarea id="cadDescricao" rows="4" cols="40" minlength="10" maxlength="100" required
-                oninvalid="this.setCustomValidity('Insira uma descrição entre 10 e 100 caracteres!')"
-                oninput="this.setCustomValidity('')"></textarea>
-
-            <label for="cadCategoria">categoria:</label>
-            <input type="text" id="cadCategoria" required
-                oninvalid="this.setCustomValidity('Insira uma categoria válida!')"
+            <label for="sltTipo"> Tipo: </label>
+            <select id="sltTipo" required oninvalid="this.setCustomValidity('Selecione um tipo!')"
                 oninput="this.setCustomValidity('')">
+                <option value="" selected disabled> Selecione: </option>
+                <option value="AoLeite"> Ao Leite </option>
+                <option value="Amargo"> Amargo </option>
+                <option value="Branco"> Branco </option>
+                <option value="Zero Açúcar"> Zero Açúcar </option>
+                <option value="Recheado"> Recheado </option>
+                <option value="Misto"> Misto</option>
+            </select>
 
-            <button type="submit" id="btn">Cadastrar produto</button>
+            <label for="inPrecoChocolate">preço:</label>
+            <input type="number" id="inPrecoChocolate" min="0.01" step="0.01" required
+                oninvalid="this.setCustomValidity('Insira um valor válido!')" oninput="this.setCustomValidity('')">
+
+            <label for="inEstoque"> Estoque </label>
+            <select id="sltEstoque" required oninvalid="this.setCustomValidity('Selecione o estoque!')"
+                oninput="this.setCustomValidity('')">
+                <option value="Disponível"> Disponível </option>
+                <option value="Estoque Baixo"> Estoque Baixo </option>
+                <option value="Esgotado"> Esgotado </option>
+
+            </select>
+            <div class="botoesCrud">
+                <button type="submit"> Cadastrar Produto </button>
+                <button type="button" id="btnMostrar"> Mostrar Todos os Produtos </button>
+                <button type="button" id="btnConsultar"> Consultar Produto </button>
+                <button type="button" id="btnAlterar"> Alterar Produto </button>
+                <button type="button" id="btnExcluir"> Excluir Produto </button>
+                <button type="button" id="btnListar"> Listar Produtos Cadastrados </button>
+            </div>
 
         </form>
+        <p id="outMensagem"></p>
+
+        <pre id="outCadastro"> </pre>
+        <pre id="outSessao"> </pre>
     </main>
 
-    <p id="mensagemCadastroChocolate"></p>
-
-     <footer class="rodape">
+    <footer class="rodape">
 
         <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
 
