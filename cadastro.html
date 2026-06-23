@@ -16,58 +16,71 @@
         <a href="cadastro.html">Cadastro</a>
         <a href="sobre.html">Sobre</a>
     </nav>
-    <h1>🍫 Cadastro Chocoholic</h1>
 
-    <form>
+    <main>
+        <h1>🍫 Cadastro Chocoholic</h1>
 
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome_cliente"><br><br>
+        <form id="formCadastro">
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email_cliente"><br><br>
+            <label for="inNome">Nome:</label><br>
+            <input type="text" id="inNome" name="nomeCliente" required><br><br>
 
-        <label>Senha:</label><br>
-        <input type="password" name="senha_cliente"><br><br>
+            <label for="inEmail">Email:</label><br>
+            <input type="email" id="inEmail" name="emailCliente" required><br><br>
 
-        <label>Idade:</label><br>
-        <input type="number" name="idade_cliente"><br><br>
+            <label for="inSenha">Senha:</label><br>
+            <input type="password" id="inSenha" name="senhaCliente" minlength="6" required><br><br>
 
-        <label>Tipo de chocolate favorito:</label><br>
-        <select name="tipo_chocolate">
-            <option>Ao leite</option>
-            <option>Amargo</option>
-            <option>Branco</option>
-        </select>
-        <br><br>
+            <label for="inIdade">Idade:</label><br>
+            <input type="number" id="inIdade" name="idadeCliente" min="1" max="120" required><br><br>
 
-        <label>Frequência de consumo:</label><br>
-        <input type="radio" name="frequencia" value="diario"> Diário<br>
-        <input type="radio" name="frequencia" value="semanal"> Semanal<br>
-        <input type="radio" name="frequencia" value="mensal"> Mensal<br><br>
+            <label for="inTipoChocolate">Tipo de chocolate favorito:</label><br>
+            <select id="inTipoChocolate" name="tipoChocolates" required>
+                <option value="">Selecione</option>
+                <option value="ao leite">Ao leite</option>
+                <option value="amargo">Amargo</option>
+                <option value="branco">Branco</option>
+            </select>
+            <br><br>
 
-        <label>Quais produtos você gosta?</label><br>
-        <input type="checkbox" name="preferencias" value="trufas"> Trufas<br>
-        <input type="checkbox" name="preferencias" value="barras"> Barras<br>
-        <input type="checkbox" name="preferencias" value="bombons"> Bombons<br><br>
+            <p>Frequência de consumo:</p>
 
-        <input type="submit" value="Enviar">
+            <input type="radio" id="freqDiario" name="frequencia" value="diario" required>
+            <label for="freqDiario">Diário</label><br>
 
-        <div class="link-login">
-            <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
-        </div>
+            <input type="radio" id="freqSemanal" name="frequencia" value="semanal">
+            <label for="freqSemanal">Semanal</label><br>
 
-    </form>
+            <input type="radio" id="freqMensal" name="frequencia" value="mensal">
+            <label for="freqMensal">Mensal</label><br><br>
+
+            <p>Quais produtos você gosta?</p>
+
+            <input type="checkbox" id="prefTrufas" name="preferencias" value="trufas">
+            <label for="prefTrufas">Trufas</label><br>
+
+            <input type="checkbox" id="prefBarras" name="preferencias" value="barras">
+            <label for="prefBarras">Barras</label><br>
+
+            <input type="checkbox" id="prefBombons" name="preferencias" value="bombons">
+            <label for="prefBombons">Bombons</label><br><br>
+
+            <input type="submit" value="Enviar">
+
+            <p id="outSaida"></p>
+
+            <div class="link-login">
+                <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
+            </div>
+
+        </form>
+    </main>
 
     <footer class="rodape">
-
         <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
-
         <p>Contato: chocoholic@gmail.com</p>
-
         <p>© 2026 Chocoholic • Todos os direitos reservados</p>
-
     </footer>
-
 
     <script src="./script/cadastro.js"></script>
 </body>
