@@ -89,3 +89,7 @@ btnPesquisar.addEventListener("click", pesquisa)
 
 function pesquisa() {
 }
+
+function filtro () {
+    
+}
