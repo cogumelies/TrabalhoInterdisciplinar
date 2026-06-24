@@ -3,20 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos | Chocoholic</title>
     <meta name="description" content="Produtos da Chocoholic">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    
+
     <header class="topo">
         <nav class="menu">
             <a href="land.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="contato.html">Contato</a>
-            <a href="cadastro.html">Cadastro</a>
-            <a href="./login.html">Login</a>
+            <a href="fazerpedido.html">Fazer Pedido</a>
+            <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
             <a href="sobre.html">Sobre</a>
         </nav>
 
@@ -27,17 +28,23 @@
     </header>
 
     <main>
-        <!-- CARDS VINDO DO JS -->
-        <div class="produtos" id="container-produtos"></div>
-
+        <section id="listaProdutos" class="listaProdutos"></section>
         
-    </main>
+        <label for="inPesquisa">Pesquisar produtos:</label>
+        <input type="text" id="inPesquisa" placeholder="pesquisar produtos...">
+       
+        <button id="btnPesquisar">Pesquisar</button>
 
-    <footer>
-        <p>© 2026 Chocoholic - Todos os direitos reservados</p>
-    </footer>
 
-    <script src="produtos.js"></script>
+        <footer class="rodape">
+            <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
+            <p>Contato: chocoholic@gmail.com</p>
+            <p>© 2026 Chocoholic • Todos os direitos reservados</p>
+        </footer>
+
+        <script src="./script/produtos.js"></script>
 </body>
+
+</html>
 
 </html>
