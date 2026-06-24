@@ -3,75 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro Chocoholic</title>
+    <title>Fazer Pedido - Chocoholic</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <nav>
+    <nav class="menu">
         <a href="land.html">Início</a>
         <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
-        <a href="cadastro.html">Cadastro</a>
+        <a href="fazerpedido.html">Fazer Pedido</a>
+        <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
         <a href="sobre.html">Sobre</a>
-    </nav>
-
+        </nav>
     <main>
-        <h1>🍫 Cadastro Chocoholic</h1>
+        <h1>🍫 Fazer Pedido</h1>
 
-        <form id="formCadastro">
+        <form id="formPedido" class="formPedido">
 
             <label for="inNome">Nome:</label><br>
-            <input type="text" id="inNome" name="nomeCliente" required><br><br>
+            <input type="text" id="inNome" name="nomeCliente" required
+                oninvalid="this.setCustomValidity('Informe seu nome!')"
+                oninput="this.setCustomValidity('')"><br><br>
 
             <label for="inEmail">Email:</label><br>
-            <input type="email" id="inEmail" name="emailCliente" required><br><br>
+            <input type="email" id="inEmail" name="emailCliente" required
+                oninvalid="this.setCustomValidity('Informe um email válido!')"
+                oninput="this.setCustomValidity('')"><br><br>
 
-            <label for="inSenha">Senha:</label><br>
-            <input type="password" id="inSenha" name="senhaCliente" minlength="6" required><br><br>
+            <label for="inTelefone">Telefone:</label><br>
+            <input type="tel" id="inTelefone" name="telefoneCliente" required
+                oninvalid="this.setCustomValidity('Informe seu telefone!')"
+                oninput="this.setCustomValidity('')"><br><br>
 
-            <label for="inIdade">Idade:</label><br>
-            <input type="number" id="inIdade" name="idadeCliente" min="1" max="120" required><br><br>
-
-            <label for="inTipoChocolate">Tipo de chocolate favorito:</label><br>
-            <select id="inTipoChocolate" name="tipoChocolates" required>
-                <option value="">Selecione</option>
-                <option value="ao leite">Ao leite</option>
-                <option value="amargo">Amargo</option>
-                <option value="branco">Branco</option>
+            <label for="sltProduto">Produto desejado:</label><br>
+            <select id="sltProduto" name="produtoPedido" required
+                oninvalid="this.setCustomValidity('Selecione um produto!')"
+                oninput="this.setCustomValidity('')">
+                <option value="" selected disabled>Selecione:</option>
             </select>
             <br><br>
 
-            <p>Frequência de consumo:</p>
+            <label for="inQuantidade">Quantidade:</label><br>
+            <input type="number" id="inQuantidade" name="quantidadePedido" min="1" required
+                oninvalid="this.setCustomValidity('Informe uma quantidade válida!')"
+                oninput="this.setCustomValidity('')"><br><br>
 
-            <input type="radio" id="freqDiario" name="frequencia" value="diario" required>
-            <label for="freqDiario">Diário</label><br>
+            <p>Forma de entrega:</p>
 
-            <input type="radio" id="freqSemanal" name="frequencia" value="semanal">
-            <label for="freqSemanal">Semanal</label><br>
+            <input type="radio" id="entregaRetirada" name="formaEntrega" value="Retirada" required>
+            <label for="entregaRetirada">Retirada na loja</label><br>
 
-            <input type="radio" id="freqMensal" name="frequencia" value="mensal">
-            <label for="freqMensal">Mensal</label><br><br>
+            <input type="radio" id="entregaDelivery" name="formaEntrega" value="Entrega">
+            <label for="entregaDelivery">Entrega</label><br><br>
 
-            <p>Quais produtos você gosta?</p>
+            <label for="inEndereco">Endereço:</label><br>
+            <input type="text" id="inEndereco" name="enderecoCliente"
+                placeholder="Preencha apenas se escolher entrega" required 
+                oninvalid="this.setCustomValidity('Insira seu endereço!!')"
+                oninput="this.setCustomValidity('')">
 
-            <input type="checkbox" id="prefTrufas" name="preferencias" value="trufas">
-            <label for="prefTrufas">Trufas</label><br>
+            <label for="sltPagamento">Forma de pagamento:</label><br>
+            <select id="sltPagamento" name="formaPagamento" required
+                oninvalid="this.setCustomValidity('Selecione uma forma de pagamento!')"
+                oninput="this.setCustomValidity('')">
+                <option value="" selected disabled>Selecione:</option>
+                <option value="Pix">Pix</option>
+                <option value="Cartão de crédito">Cartão de crédito</option>
+                <option value="Cartão de débito">Cartão de débito</option>
+            
+            </select>
+            <br><br>
 
-            <input type="checkbox" id="prefBarras" name="preferencias" value="barras">
-            <label for="prefBarras">Barras</label><br>
+            <label for="inObservacao">Observações:</label><br>
+            <textarea id="inObservacao" name="observacaoPedido" rows="4" cols="40" maxlength="150"
+                placeholder="Exemplo: embalagem para presente, horário preferido..."></textarea>
+            <br><br>
 
-            <input type="checkbox" id="prefBombons" name="preferencias" value="bombons">
-            <label for="prefBombons">Bombons</label><br><br>
-
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Finalizar Pedido">
 
             <p id="outSaida"></p>
-
-            <div class="link-login">
-                <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
-            </div>
 
         </form>
     </main>
@@ -82,7 +94,8 @@
         <p>© 2026 Chocoholic • Todos os direitos reservados</p>
     </footer>
 
-    <script src="./script/cadastro.js"></script>
+    <script src="./script/pedido.js"></script>
+    <script src="./script/produtos.js"></script>
 </body>
 
 </html>

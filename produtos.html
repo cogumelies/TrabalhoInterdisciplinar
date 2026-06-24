@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos | Chocoholic</title>
     <meta name="description" content="Produtos da Chocoholic">
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +16,8 @@
             <a href="land.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="contato.html">Contato</a>
-            <a href="fazerpedidos.html"> Fazer Pedidos </a>
+            <a href="fazerpedido.html">Fazer Pedido</a>
+            <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
             <a href="sobre.html">Sobre</a>
         </nav>
 
@@ -26,47 +28,23 @@
     </header>
 
     <main>
-
-        <div class="produtos" id="container-produtos">
-            <h1>Mais Vendidos da Chocoholic</h1>
-             <div class="produtos">
-            <div class="card">
-                <img src="/imagens/chocomorango.png" alt="">
-                <h3>Barra Chocolate Recheada Morango 100g</h3>
-                <p>Uma barra de chocolate recheada com morango, oferecendo uma combinação perfeita entre o sabor doce do chocolate e a acidez do morango.</p>
-                <h3>Preço: 19.99</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img src="/imagens/choconapo.png" alt="">
-                <h3>Caixa Coração Bombons ao Leite, 185g</h3>
-                <p>Caixa em formato de coração com bombons ao leite, chocolate simples porém com uma cremosidade única, ideal para presentear alguém especial.</p>
-                <h3>Preço: 44.99</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img src="/imagens/chocolateb.jpg" alt="">
-                <h3>Barra Chocolate Recheada Avelã 100g</h3>
-                <p>Uma barra de chocolate recheada com avelã, combinando o sabor intenso do chocolate com a crocância e o sabor marcante da avelã.</p>
-                <h3>Preço: 19.99</h3>
-                <button>Comprar</button>
-            </div>
-        </div>
-        </div>
-    </main>
-
-    <footer class="rodape">
-
-        <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
-
-        <p>Contato: chocoholic@gmail.com</p>
-
-        <p>© 2026 Chocoholic • Todos os direitos reservados</p>
-
-    </footer>
+        <section id="listaProdutos" class="listaProdutos"></section>
+        
+        <label for="inPesquisa">Pesquisar produtos:</label>
+        <input type="text" id="inPesquisa" placeholder="pesquisar produtos...">
+       
+        <button id="btnPesquisar">Pesquisar</button>
 
 
-    <script src="./script/produtos.js"></script>
+        <footer class="rodape">
+            <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
+            <p>Contato: chocoholic@gmail.com</p>
+            <p>© 2026 Chocoholic • Todos os direitos reservados</p>
+        </footer>
+
+        <script src="./script/produtos.js"></script>
 </body>
+
+</html>
 
 </html>
