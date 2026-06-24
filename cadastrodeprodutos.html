@@ -12,10 +12,12 @@
 
     <header class="classHeader">
         <nav class="menu">
-            <a href="land.html">Início</a>
-            <a href="produtos.html">Produtos</a>
-            <a href="contato.html">Contato</a>
-            <a href="cadastro.html">Cadastro</a>
+        <a href="land.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="fazerpedido.html">Fazer Pedido</a>
+        <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
+        <a href="sobre.html">Sobre</a>
         </nav>
     </header>
 
@@ -25,13 +27,10 @@
         <form id="formCadastroChocolates" class="formCadastroChocolates">
 
             <label for="inNomeChocolate">Chocolate:</label>
-            <input type="text" id="inNomeChocolate" required
-                oninvalid="this.setCustomValidity('Insira um nome para o chocolate!')"
-                oninput="this.setCustomValidity('')">
+            <input type="text" id="inNomeChocolate">
 
             <label for="sltCategoria">Categoria:</label>
-            <select id="sltCategoria" required oninvalid="this.setCustomValidity('Selecione uma categoria!')"
-                oninput="this.setCustomValidity('')">
+            <select id="sltCategoria">
                 <option value="" selected disabled> Selecione: </option>
                 <option value="Bombons"> Bombons </option>
                 <option value="Barras"> Barras </option>
@@ -39,8 +38,7 @@
             </select>
 
             <label for="sltTipo"> Tipo: </label>
-            <select id="sltTipo" required oninvalid="this.setCustomValidity('Selecione um tipo!')"
-                oninput="this.setCustomValidity('')">
+            <select id="sltTipo">
                 <option value="" selected disabled> Selecione: </option>
                 <option value="AoLeite"> Ao Leite </option>
                 <option value="Amargo"> Amargo </option>
@@ -51,19 +49,20 @@
             </select>
 
             <label for="inPrecoChocolate">preço:</label>
-            <input type="number" id="inPrecoChocolate" min="0.01" step="0.01" required
-                oninvalid="this.setCustomValidity('Insira um valor válido!')" oninput="this.setCustomValidity('')">
+            <input type="number" id="inPrecoChocolate">
 
             <label for="inEstoque"> Estoque </label>
-            <select id="sltEstoque" required oninvalid="this.setCustomValidity('Selecione o estoque!')"
-                oninput="this.setCustomValidity('')">
+            <select id="sltEstoque"> 
+                 <option value="" selected disabled>Selecione:</option>
                 <option value="Disponível"> Disponível </option>
                 <option value="Estoque Baixo"> Estoque Baixo </option>
                 <option value="Esgotado"> Esgotado </option>
 
             </select>
+
+            
             <div class="botoesCrud">
-                <button type="submit"> Cadastrar Produto </button>
+                <button type="button" id="btnCadastrar"> Cadastrar Produto </button>
                 <button type="button" id="btnMostrar"> Mostrar Todos os Produtos </button>
                 <button type="button" id="btnConsultar"> Consultar Produto </button>
                 <button type="button" id="btnAlterar"> Alterar Produto </button>
@@ -89,7 +88,7 @@
     </footer>
 
 
-    <script src="script/cadastrochocolate.js"></script>
+    <script src="script/crud.js"></script>
 </body>
 
 </html>
