@@ -53,6 +53,7 @@
 
             <label for="inEstoque"> Estoque </label>
             <select id="sltEstoque"> 
+                 <option value="" selected disabled>Selecione:</option>
                 <option value="Disponível"> Disponível </option>
                 <option value="Estoque Baixo"> Estoque Baixo </option>
                 <option value="Esgotado"> Esgotado </option>
@@ -61,7 +62,7 @@
 
             
             <div class="botoesCrud">
-                <button type="submit"> Cadastrar Produto </button>
+                <button type="button" id="btnCadastrar"> Cadastrar Produto </button>
                 <button type="button" id="btnMostrar"> Mostrar Todos os Produtos </button>
                 <button type="button" id="btnConsultar"> Consultar Produto </button>
                 <button type="button" id="btnAlterar"> Alterar Produto </button>
