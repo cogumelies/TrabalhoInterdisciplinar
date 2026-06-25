@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Fazer Pedido - Chocoholic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,36 +24,24 @@
         <form id="formPedido" class="formPedido">
 
             <label for="inNome">Nome:</label><br>
-            <input type="text" id="inNome" name="nomeCliente" required
-                oninvalid="this.setCustomValidity('Informe seu nome!')"
-                oninput="this.setCustomValidity('')"><br><br>
-
-            <label for="inEmail">Email:</label><br>
-            <input type="email" id="inEmail" name="emailCliente" required
-                oninvalid="this.setCustomValidity('Informe um email válido!')"
-                oninput="this.setCustomValidity('')"><br><br>
+            <input type="text" id="inNome" name="nomeCliente">
 
             <label for="inTelefone">Telefone:</label><br>
-            <input type="tel" id="inTelefone" name="telefoneCliente" required
-                oninvalid="this.setCustomValidity('Informe seu telefone!')"
-                oninput="this.setCustomValidity('')"><br><br>
+            <input type="tel" id="inTelefone" name="telefoneCliente">
 
             <label for="sltProduto">Produto desejado:</label><br>
-            <select id="sltProduto" name="produtoPedido" required
-                oninvalid="this.setCustomValidity('Selecione um produto!')"
-                oninput="this.setCustomValidity('')">
+            <select id="sltProduto" name="produtoPedido">
                 <option value="" selected disabled>Selecione:</option>
+                 <option value="teste">teste</option>
             </select>
             <br><br>
 
             <label for="inQuantidade">Quantidade:</label><br>
-            <input type="number" id="inQuantidade" name="quantidadePedido" min="1" required
-                oninvalid="this.setCustomValidity('Informe uma quantidade válida!')"
-                oninput="this.setCustomValidity('')"><br><br>
+            <input type="number" id="inQuantidade" name="quantidadePedido">
 
             <p>Forma de entrega:</p>
 
-            <input type="radio" id="entregaRetirada" name="formaEntrega" value="Retirada" required>
+            <input type="radio" id="entregaRetirada" name="formaEntrega" value="Retirada">
             <label for="entregaRetirada">Retirada na loja</label><br>
 
             <input type="radio" id="entregaDelivery" name="formaEntrega" value="Entrega">
@@ -60,14 +49,10 @@
 
             <label for="inEndereco">Endereço:</label><br>
             <input type="text" id="inEndereco" name="enderecoCliente"
-                placeholder="Preencha apenas se escolher entrega" required 
-                oninvalid="this.setCustomValidity('Insira seu endereço!!')"
-                oninput="this.setCustomValidity('')">
+                placeholder="Preencha apenas se escolher entrega">
 
             <label for="sltPagamento">Forma de pagamento:</label><br>
-            <select id="sltPagamento" name="formaPagamento" required
-                oninvalid="this.setCustomValidity('Selecione uma forma de pagamento!')"
-                oninput="this.setCustomValidity('')">
+            <select id="sltPagamento" name="formaPagamento">
                 <option value="" selected disabled>Selecione:</option>
                 <option value="Pix">Pix</option>
                 <option value="Cartão de crédito">Cartão de crédito</option>
@@ -81,7 +66,7 @@
                 placeholder="Exemplo: embalagem para presente, horário preferido..."></textarea>
             <br><br>
 
-            <input type="submit" value="Finalizar Pedido">
+            <button type="button" id="btnPedido"> Fazer Pedido </button>
 
             <p id="outSaida"></p>
 
@@ -94,8 +79,7 @@
         <p>© 2026 Chocoholic • Todos os direitos reservados</p>
     </footer>
 
-    <script src="./script/pedido.js"></script>
-    <script src="./script/produtos.js"></script>
+    <script src="/script/pedidos.js"></script>
 </body>
 
 </html>

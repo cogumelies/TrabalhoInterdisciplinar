@@ -10,8 +10,7 @@ const btnAlterar = document.getElementById("btnAlterar");
 const btnListar = document.getElementById("btnListar");
 const btnExcluir = document.getElementById("btnExcluir");
 const outMensagem = document.getElementById("outMensagem");
-const outCadastro = document.getElementById("outCadastro");
-const outSessao = document.getElementById("outSessao");
+
 
 btnCadastrar.addEventListener("click", cadastro);
 btnMostrar.addEventListener("click", mostrar);
@@ -20,15 +19,15 @@ btnAlterar.addEventListener("click", alterar);
 btnListar.addEventListener("click", listar);
 btnExcluir.addEventListener("click", excluir);
 
-var vetCrud = []
+var vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
 
-function cadastro () {
+function cadastro() {
     var nomeInformado = inNomeChocolate.value;
     var catSelecionada = sltCategoria.value;
     var tipoSelecionado = sltTipo.value;
     var precoChoc = Number(inPrecoChocolate.value);
     var estoqueSlt = sltEstoque.value;
-    
+
 
     if (nomeInformado == "") {
         alert("Insira o nome do chocolate")
@@ -42,7 +41,7 @@ function cadastro () {
         alert("Selecione um tipo de chocolate!")
         sltTipo.focus()
     }
-    else if (inPrecoChocolate.value == "" || precoChoc <= 0)  {
+    else if (inPrecoChocolate.value == "" || precoChoc <= 0) {
         alert("Insira um valor para o chocolate!")
         inPrecoChocolate.focus()
     }
@@ -59,17 +58,84 @@ function cadastro () {
             estoque: estoqueSlt
         })
 
-    localStorage.setItem("produtos", JSON.stringify(vetCrud));
+        localStorage.setItem("produtos", JSON.stringify(vetCrud));
 
-    outMensagem.innerHTML = "Produto cadastrado com sucesso! 🍫✔️"
+        outMensagem.innerHTML = "Produto cadastrado com sucesso! 🍫✔️"
+
+        inNomeChocolate.value = "";
+        sltCategoria.selectedIndex = 0;
+        sltTipo.selectedIndex = 0;
+        inPrecoChocolate.value = "";
+        sltEstoque.selectedIndex = 0;
     }
 }
 
 function mostrar() {
+
+    outMensagem.innerHTML = ""
+
+    if (vetCrud.length == 0) {
+        outMensagem.innerHTML = "Nenhum chocolate foi cadastrado ainda!"
+    }
+    else {
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            outMensagem.innerHTML +=
+                "Nome: " + vetCrud[ind].nome + " | " +
+                "Categoria: " + vetCrud[ind].categoria + " | " +
+                "Tipo: " + vetCrud[ind].tipo + " | " +
+                "Preço: R$ " + vetCrud[ind].preco.toFixed(2) + " | " +
+                "Estoque: " + vetCrud[ind].estoque + "<br>"
+        }
+    }
 }
 
 function consultar() {
+
+    var nomeInformado = inNomeChocolate.value;
+    var encontrou = false
+
+    outMensagem.innerHTML = ""
+
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+
+    if (nomeInformado == "") {
+        alert("Insira o nome do chocolate que você deseja consultar!")
+        inNomeChocolate.focus()
+    }
+    else {
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            if (vetCrud[ind].nome.toUpperCase() == nomeInformado.toUpperCase()) {
+                encontrou = true
+
+                sltCategoria.value = vetCrud[ind].categoria;
+                sltTipo.value = vetCrud[ind].tipo;
+                inPrecoChocolate.value = vetCrud[ind].preco;
+                sltEstoque.value = vetCrud[ind].estoque
+
+                outMensagem.innerHTML = "Produto Encontrado! <br>" +
+                    "Nome: " + vetCrud[ind].nome + " | " +
+                    "Categoria: " + vetCrud[ind].categoria + " | " +
+                    "Tipo: " + vetCrud[ind].tipo + " | " +
+                    "Preço: R$ " + vetCrud[ind].preco.toFixed(2) + " | " +
+                    "Estoque: " + vetCrud[ind].estoque + "<br>"
+
+                inNomeChocolate.value = "";
+                sltCategoria.selectedIndex = 0;
+                sltTipo.selectedIndex = 0;
+                inPrecoChocolate.value = "";
+                sltEstoque.selectedIndex = 0;
+
+            }
+        }
+
+        if (encontrou == false) {
+            outMensagem.innerHTML = "Produto não encontrado!"
+            inNomeChocolate.focus()
+        }
+    }
 }
+
+
 
 function alterar() {
 }

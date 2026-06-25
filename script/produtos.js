@@ -8,32 +8,28 @@ var vetProdutosIniciais = [
         preco: 34.99,
         categoria: "Bombons",
         tipo: "Misto",
-        estoque: "Disponível",
-        imagem: "..imagens/neapolitan.JPG"
+        estoque: "Disponível"
     },
     {
         nome: "Caixa Coração Bombons ao Leite, 185g",
         preco: 44.99,
         categoria: "Bombons",
         tipo: "Ao Leite",
-        estoque: "Disponível",
-        imagem: "..imagens/heartbox.JPG"
+        estoque: "Disponível"
     },
     {
         nome: "Caixa Bombons Zero Açúcar, 135g",
         preco: 24.99,
         categoria: "Bombons",
         tipo: "Zero Açúcar",
-        estoque: "Disponível",
-        imagem: "..imagens/zero.png"
+        estoque: "Disponível"
     },
     {
         nome: "Barra Chocolate Recheada Avelã 100g",
         preco: 19.99,
         categoria: "Barras",
         tipo: "Recheado",
-        estoque: "Disponível",
-        imagem: "..imagens/chocolatet.jpg"
+        estoque: "Disponível"
 
     },
     {
@@ -41,8 +37,7 @@ var vetProdutosIniciais = [
         preco: 19.99,
         categoria: "Barras",
         tipo: "Recheado",
-        estoque: "Disponível",
-        imagem: "..imagens/zero.png"
+        estoque: "Disponível"
     }
 ];
 
@@ -70,7 +65,6 @@ function mostrar() {
     for (var ind = 0; ind < vetProdutos.length; ind++) {
         listaProdutos.innerHTML +=
             '<div class="produto">' +
-            '<img src="' + vetProdutos[ind].imagem + '" alt="' + vetProdutos[ind].nome + '">' +
             '<h3>' + vetProdutos[ind].nome + '</h3>' +
             '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
             '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
