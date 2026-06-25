@@ -75,7 +75,7 @@ function mostrar() {
     outMensagem.innerHTML = ""
 
     if (vetCrud.length == 0) {
-        outMensagem.innerHTML = "Nenhum chocolate foi registrado!"
+        outMensagem.innerHTML = "Nenhum chocolate foi cadastrado ainda!"
     }
     else {
         for (var ind = 0; ind < vetCrud.length; ind++) {
@@ -91,9 +91,50 @@ function mostrar() {
 
 function consultar() {
 
+    var nomeInformado = inNomeChocolate.value;
+    var encontrou = false
+
     outMensagem.innerHTML = ""
 
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+
+    if (nomeInformado == "") {
+        alert("Insira o nome do chocolate que você deseja consultar!")
+        inNomeChocolate.focus()
+    }
+    else {
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            if (vetCrud[ind].nome.toUpperCase() == nomeInformado.toUpperCase()) {
+                encontrou = true
+
+                sltCategoria.value = vetCrud[ind].categoria;
+                sltTipo.value = vetCrud[ind].tipo;
+                inPrecoChocolate.value = vetCrud[ind].preco;
+                sltEstoque.value = vetCrud[ind].estoque
+
+                outMensagem.innerHTML = "Produto Encontrado! <br>" +
+                    "Nome: " + vetCrud[ind].nome + " | " +
+                    "Categoria: " + vetCrud[ind].categoria + " | " +
+                    "Tipo: " + vetCrud[ind].tipo + " | " +
+                    "Preço: R$ " + vetCrud[ind].preco.toFixed(2) + " | " +
+                    "Estoque: " + vetCrud[ind].estoque + "<br>"
+
+                inNomeChocolate.value = "";
+                sltCategoria.selectedIndex = 0;
+                sltTipo.selectedIndex = 0;
+                inPrecoChocolate.value = "";
+                sltEstoque.selectedIndex = 0;
+
+            }
+        }
+
+        if (encontrou == false) {
+            outMensagem.innerHTML = "Produto não encontrado!"
+            inNomeChocolate.focus()
+        }
+    }
 }
+
 
 
 function alterar() {
