@@ -83,21 +83,40 @@ btnPesquisar.addEventListener("click", pesquisa)
 
 function pesquisa() {
     var pesquisa = inPesquisa.value
-    var produtos = JSON.parse(localStorage.getItem("produtos"));
+    var encontrou = false;
 
-    for (i = 0; i < produtos.length; i++) {
-        if (produtos[i].nome == "") {
-            resultado = '<div class="produto">' +
-                '<h3>' + "Produto não encontrado" + '</h3>' +
-                '</div>'
-            listaProdutos.innerHTML += resultado
+    listaProdutos.innerHTML = "";
 
+    if (pesquisa == "") {
+        alert("digite o nome do produto para pesquisar!")
+        inPesquisa.focus()
+    }
+    else {
+        for (let ind = 0; ind < vetProdutos.length; ind++) {
+            if (vetProdutos[ind].nome.toUpperCase() == pesquisa.toUpperCase()) {
+                encontrou = true
+
+                listaProdutos.innerHTML +=
+                    '<div class="produto">' +
+                    '<h3>' + vetProdutos[ind].nome + '</h3>' +
+                    '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
+                    '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
+                    '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
+                    '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
+                    '</div>';
+            }
         }
 
+        if (encontrou == false) {
+            listaProdutos.innerHTML = 
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
+            
+        }
     }
-
 }
 
-function filtro () {
-    
+function filtro() {
+
 }
