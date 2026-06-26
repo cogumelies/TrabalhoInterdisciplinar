@@ -25,7 +25,7 @@ var vetProdutosIniciais = [
         estoque: "Disponível"
     },
     {
-        nome: "Barra Chocolate Recheada Avelã 100g",
+        nome: "Barra Chocolate Recheada Avelã, 100g",
         preco: 19.99,
         categoria: "Barras",
         tipo: "Recheado",
@@ -33,7 +33,7 @@ var vetProdutosIniciais = [
 
     },
     {
-        nome: "Barra Chocolate Recheada Morango 100g",
+        nome: "Barra Chocolate Recheada Morango, 100g",
         preco: 19.99,
         categoria: "Barras",
         tipo: "Recheado",
