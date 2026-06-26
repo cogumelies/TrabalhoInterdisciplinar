@@ -82,6 +82,20 @@ mostrar();
 btnPesquisar.addEventListener("click", pesquisa)
 
 function pesquisa() {
+    var pesquisa = inPesquisa.value
+    var produtos = JSON.parse(localStorage.getItem("produtos"));
+
+    for (i = 0; i < produtos.length; i++) {
+        if (produtos[i].nome == "") {
+            resultado = '<div class="produto">' +
+                '<h3>' + "Produto não encontrado" + '</h3>' +
+                '</div>'
+            listaProdutos.innerHTML += resultado
+
+        }
+
+    }
+
 }
 
 function filtro () {
