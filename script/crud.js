@@ -1,3 +1,5 @@
+const { jsx } = require("react/jsx-runtime");
+
 const inNomeChocolate = document.getElementById("inNomeChocolate");
 const sltCategoria = document.getElementById("sltCategoria");
 const sltTipo = document.getElementById("sltTipo");
@@ -19,7 +21,8 @@ btnAlterar.addEventListener("click", alterar);
 btnListar.addEventListener("click", listar);
 btnExcluir.addEventListener("click", excluir);
 
-var vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
+var vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+var indSel = -1
 
 function cadastro() {
     var nomeInformado = inNomeChocolate.value;
@@ -136,7 +139,31 @@ function consultar() {
 }
 
 function alterar() {
+
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+    outMensagem.innerHTML = ""
+
+    if (vetCrud.length == 0) {
+        outMensagem.innerHTML = "Nenhum produto cadastrado para alterar!"
+    }
+    else if (indSel == -1) {
+        outMensagem.innerHTML = "Selecione o produto que deseja alterar: <br>"
+
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            outMensagem.innerHTML += 
+            "Nome: " + vetCrud[ind].nome + " | "
+            "Categoria: " + vetCrud[ind].categoria + " | " +
+            "Tipo: " + vetCrud[ind].tipo + " | "
+            "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
+            "Estoque " + vetCrud[ind].estoque +
+           '<button type="button" class="btnSelecionarAlteracao" value="' + ind + '">Selecionar</button><br><br>'
+
+           
+        }
+    }
 }
+
+
 
 function listar() {
 }
