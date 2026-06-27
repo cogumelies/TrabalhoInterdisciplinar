@@ -1,3 +1,5 @@
+const { jsx } = require("react/jsx-runtime");
+
 const inNomeChocolate = document.getElementById("inNomeChocolate");
 const sltCategoria = document.getElementById("sltCategoria");
 const sltTipo = document.getElementById("sltTipo");
@@ -19,7 +21,8 @@ btnExcluir.addEventListener("click", excluir);
 outMensagem.addEventListener("click", cliqueAlt);
 outMensagem.addEventListener("click", cliqueExcluir)
 
-var vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
+var vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+var indSel = -1
 
 function cadastro() {
     var nomeInformado = inNomeChocolate.value;
