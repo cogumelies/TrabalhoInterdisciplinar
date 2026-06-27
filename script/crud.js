@@ -7,7 +7,6 @@ const btnCadastrar = document.getElementById("btnCadastrar");
 const btnMostrar = document.getElementById("btnMostrar");
 const btnConsultar = document.getElementById("btnConsultar");
 const btnAlterar = document.getElementById("btnAlterar");
-const btnListar = document.getElementById("btnListar");
 const btnExcluir = document.getElementById("btnExcluir");
 const outMensagem = document.getElementById("outMensagem");
 
@@ -16,8 +15,9 @@ btnCadastrar.addEventListener("click", cadastro);
 btnMostrar.addEventListener("click", mostrar);
 btnConsultar.addEventListener("click", consultar);
 btnAlterar.addEventListener("click", alterar);
-btnListar.addEventListener("click", listar);
 btnExcluir.addEventListener("click", excluir);
+outMensagem.addEventListener("click", cliqueAlt);
+outMensagem.addEventListener("click", cliqueExcluir)
 
 var vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
 
@@ -135,11 +135,82 @@ function consultar() {
     }
 }
 
+/* alteracao */
+
 function alterar() {
+
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+    outMensagem.innerHTML = ""
+
+    if (vetCrud.length == 0) {
+        outMensagem.innerHTML = "Nenhum produto cadastrado para alterar!"
+    }
+    else if (indSel == -1) {
+        outMensagem.innerHTML = "Selecione o produto que deseja alterar: <br>"
+
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            outMensagem.innerHTML += 
+            "Nome: " + vetCrud[ind].nome + " | "
+            "Categoria: " + vetCrud[ind].categoria + " | " +
+            "Tipo: " + vetCrud[ind].tipo + " | "
+            "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
+            "Estoque " + vetCrud[ind].estoque +
+           '<button type="button" class="btnSelecionarAlteracao" value="' + ind + '">Selecionar</button><br><br>'
+
+           
+        }
+    }
 }
+
+
 
 function listar() {
 }
 
 function excluir() {
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
+    outMensagem.innerHTML = ""
+
+    if (vetCrud.length == 0) {
+        outMensagem.innerHTML = "Nenhum produto cadastrado!"
+    }
+    else {
+        outMensagem.innerHTML = "Selecione o produto que você deseja excluir: <br> <br>"
+
+        for (var ind = 0; ind < vetCrud.length; ind++) {
+            outMensagem.innerHTML +=
+            "Nome: " + vetCrud[ind].nome + " | " +
+            "Categoria: " + vetCrud[ind].categoria + " | " +
+            "Tipo: " + vetCrud[ind].tipo + " | " +
+            "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
+            "Estoque " + vetCrud[ind].estoque + "<br>"  +
+            '<button type="button" class="btnExcluirProduto" value="' + ind + '">Selecionar</button><br><br>'
+        }
+    }
+}
+
+function cliqueExcluir (evento) {
+    if (evento.target.className == "btnExcluirProduto") {
+        var indExcluir = Number(evento.target.value);
+
+        var confirmar = confirm("Tem certeza que deseja excluir esse produto?")
+
+        if (confirmar == true) {
+            excluirProduto(indExcluir);
+        }
+    }
+}
+
+function excluirProduto(indExcluir) {
+    var vetNovo = []
+
+    for (var ind = 0; ind < vetCrud.length; ind++) {
+        if (ind != indExcluir) {
+            vetNovo[vetNovo.length] = vetCrud[ind]
+        }
+    }
+
+    vetCrud = vetNovo
+    localStorage.setItem("produtos", JSON.stringify(vetCrud))
+    outMensagem.innerHTML = "Produto excluido com sucesso!"
 }
