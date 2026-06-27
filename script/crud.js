@@ -18,11 +18,11 @@ btnMostrar.addEventListener("click", mostrar);
 btnConsultar.addEventListener("click", consultar);
 btnAlterar.addEventListener("click", alterar);
 btnExcluir.addEventListener("click", excluir);
-outMensagem.addEventListener("click", cliqueAlt);
-outMensagem.addEventListener("click", cliqueExcluir)
+outMensagem.addEventListener("click", btnClickAlt);
+outMensagem.addEventListener("click", btnClickExcluir)
 
-var vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
-var indSel = -1
+var vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
+var indSel = -1;
 
 function cadastro() {
     var nomeInformado = inNomeChocolate.value;
@@ -142,28 +142,94 @@ function consultar() {
 
 function alterar() {
 
-    vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
-    outMensagem.innerHTML = ""
+    vetCrud = JSON.parse(localStorage.getItem("produtos")) || [];
+    outMensagem.innerHTML = "";
 
     if (vetCrud.length == 0) {
-        outMensagem.innerHTML = "Nenhum produto cadastrado para alterar!"
+        outMensagem.innerHTML = "Nenhum produto cadastrado para alterar!";
     }
     else if (indSel == -1) {
-        outMensagem.innerHTML = "Selecione o produto que deseja alterar: <br>"
+        outMensagem.innerHTML = "Selecione o produto que deseja alterar: <br><br>";
 
         for (var ind = 0; ind < vetCrud.length; ind++) {
-            outMensagem.innerHTML += 
-            "Nome: " + vetCrud[ind].nome + " | "
-            "Categoria: " + vetCrud[ind].categoria + " | " +
-            "Tipo: " + vetCrud[ind].tipo + " | "
-            "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
-            "Estoque " + vetCrud[ind].estoque +
-           '<button type="button" class="btnSelecionarAlteracao" value="' + ind + '">Selecionar</button><br><br>'
+            outMensagem.innerHTML +=
+                "Nome: " + vetCrud[ind].nome + " | " +
+                "Categoria: " + vetCrud[ind].categoria + " | " +
+                "Tipo: " + vetCrud[ind].tipo + " | " +
+                "Preço: R$ " + Number(vetCrud[ind].preco).toFixed(2) + " | " +
+                "Estoque: " + vetCrud[ind].estoque + " " +
+                '<button type="button" class="btnClickAlt" value="' + ind + '">Selecionar</button><br><br>';
+        }
+    }
+    else {
+        var nomeInformado = inNomeChocolate.value;
+        var catSelecionada = sltCategoria.value;
+        var tipoSelecionado = sltTipo.value;
+        var precoChoc = Number(inPrecoChocolate.value);
+        var estoqueSlt = sltEstoque.value;
 
-           
+        if (nomeInformado == "") {
+            alert("Insira o nome do chocolate");
+            inNomeChocolate.focus();
+        }
+        else if (catSelecionada == "") {
+            alert("Selecione uma categoria!");
+            sltCategoria.focus();
+        }
+        else if (tipoSelecionado == "") {
+            alert("Selecione um tipo de chocolate!");
+            sltTipo.focus();
+        }
+        else if (inPrecoChocolate.value == "" || precoChoc <= 0) {
+            alert("Insira um valor para o chocolate!");
+            inPrecoChocolate.focus();
+        }
+        else if (estoqueSlt == "") {
+            alert("Selecione um estoque!");
+            sltEstoque.focus();
+        }
+        else {
+            vetCrud[indSel].nome = nomeInformado;
+            vetCrud[indSel].categoria = catSelecionada;
+            vetCrud[indSel].tipo = tipoSelecionado;
+            vetCrud[indSel].preco = precoChoc;
+            vetCrud[indSel].estoque = estoqueSlt;
+
+            localStorage.setItem("produtos", JSON.stringify(vetCrud));
+
+            outMensagem.innerHTML = "Produto alterado com sucesso!";
+
+            inNomeChocolate.value = "";
+            sltCategoria.selectedIndex = 0;
+            sltTipo.selectedIndex = 0;
+            inPrecoChocolate.value = "";
+            sltEstoque.selectedIndex = 0;
+
+            indSel = -1;
         }
     }
 }
+
+function btnClickAlt(evento) {
+    if (evento.target.className == "btnClickAlt") {
+        var ind = Number(evento.target.value);
+        selecionarAlteracao(ind);
+    }
+}
+
+function selecionarAlteracao(ind) {
+    indSel = ind;
+
+    inNomeChocolate.value = vetCrud[ind].nome;
+    sltCategoria.value = vetCrud[ind].categoria;
+    sltTipo.value = vetCrud[ind].tipo;
+    inPrecoChocolate.value = vetCrud[ind].preco;
+    sltEstoque.value = vetCrud[ind].estoque;
+
+    outMensagem.innerHTML = "Alterar os dados no formúlario e depois clicar novamente em 'Alterar Produto'"
+}
+
+/* excluir */
 
 function excluir() {
     vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
@@ -177,17 +243,17 @@ function excluir() {
 
         for (var ind = 0; ind < vetCrud.length; ind++) {
             outMensagem.innerHTML +=
-            "Nome: " + vetCrud[ind].nome + " | " +
-            "Categoria: " + vetCrud[ind].categoria + " | " +
-            "Tipo: " + vetCrud[ind].tipo + " | " +
-            "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
-            "Estoque " + vetCrud[ind].estoque + "<br>"  +
-            '<button type="button" class="btnExcluirProduto" value="' + ind + '">Selecionar</button><br><br>'
+                "Nome: " + vetCrud[ind].nome + " | " +
+                "Categoria: " + vetCrud[ind].categoria + " | " +
+                "Tipo: " + vetCrud[ind].tipo + " | " +
+                "Preço: R$" + Number(vetCrud[ind].preco).toFixed(2) + " | " +
+                "Estoque " + vetCrud[ind].estoque + "<br>" +
+                '<button type="button" class="btnExcluirProduto" value="' + ind + '">Selecionar</button><br><br>'
         }
     }
 }
 
-function cliqueExcluir (evento) {
+function btnClickExcluir(evento) {
     if (evento.target.className == "btnExcluirProduto") {
         var indExcluir = Number(evento.target.value);
 
