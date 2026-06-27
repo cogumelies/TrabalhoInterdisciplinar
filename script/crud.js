@@ -162,11 +162,6 @@ function alterar() {
     }
 }
 
-
-
-function listar() {
-}
-
 function excluir() {
     vetCrud = JSON.parse(localStorage.getItem("produtos")) || []
     outMensagem.innerHTML = ""
