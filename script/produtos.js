@@ -1,6 +1,11 @@
 const listaProdutos = document.getElementById("listaProdutos");
 const inPesquisa = document.getElementById("inPesquisa");
 const btnPesquisar = document.getElementById("btnPesquisar");
+const sltFiltroCategoria = document.getElementById("sltFiltroCategoria");
+const sltFiltroTipo = document.getElementById("sltFiltroTipo");
+const inFiltroPreco = document.getElementById("inFiltroPreco");
+const btnFiltrar = document.getElementById("btnFiltrar");
+const btnLimparFiltro = document.getElementById("btnLimparFiltro");
 
 var vetProdutosIniciais = [
     {
@@ -108,15 +113,46 @@ function pesquisa() {
         }
 
         if (encontrou == false) {
-            listaProdutos.innerHTML = 
-            '<div class="produto">' +
-            '<h3> Produto não encontrado!' +
-            '</div>';
-            
+            listaProdutos.innerHTML =
+                '<div class="produto">' +
+                '<h3> Produto não encontrado!' +
+                '</div>';
+
         }
     }
 }
 
-function filtro() {
+btnFiltrar.addEventListener("click", filtro);
 
+function filtro() {
+    var categoriaFiltro = sltFiltroCategoria.value;
+    var tipoFiltro = sltFiltroTipo.value;
+    var precoFiltro = Number(inFiltroPreco.value);
+
+    listaProdutos.innerHTML = "";
+
+    for (let ind = 0; ind < vetProdutos.length; ind++) {
+        var choc = vetProdutos[ind];
+
+        const atendeCategoria = (categoriaFiltro == "todos" || choc.categoria == categoriaFiltro);
+        const atendeTipo = (tipoFiltro == "todos" || chocFiltro.tipo == tipoFiltro);
+        const atendePreco = (precoFiltro == 0 || choc.preco <= precoFiltro);
+
+        if (atendeCategoria && atendeTipo && atendePreco) {
+            listaProdutos.innerHTML +=
+                `<div class="produto">
+                    <h3>${choc.nome}</h3>
+                    <p>Preço: R$ ${choc.preco.toFixed(2)}</p>
+                    <p>Categoria: ${choc.categoria}</p>
+                    <p>Tipo: ${choc.tipo}</p>
+                    <p>Estoque: ${choc.estoque}</p>
+                </div>`;
+        }
+    }
+}
+
+btnLimparFiltro.addEventListener("click", limparFiltro);
+
+function limparFiltro(){
+    mostrar(vetProdutos)
 }
