@@ -1,5 +1,3 @@
-const { jsx } = require("react/jsx-runtime");
-
 const inNomeChocolate = document.getElementById("inNomeChocolate");
 const sltCategoria = document.getElementById("sltCategoria");
 const sltTipo = document.getElementById("sltTipo");
