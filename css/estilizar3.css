@@ -10,7 +10,6 @@ body {
     color: #3b1f1f;
 }
 
-/* HEADER */
 header {
     background: linear-gradient(#5c3a2e, #7a4b3a);
     color: white;
@@ -45,12 +44,10 @@ nav a:hover {
     font-size: 24px;
 }
 
-/* MAIN */
 main {
     padding: 70px 20px;
 }
 
-/* PRODUTOS */
 .produtos {
     display: flex;
     justify-content: center;
@@ -104,7 +101,6 @@ main {
     font-weight: bold;
 }
 
-/* BOTÕES */
 button,
 .btn {
     background: #5c3a2e;
@@ -124,7 +120,6 @@ button:hover,
     background: #3d241b;
 }
 
-/* BENEFÍCIOS */
 .beneficios {
     text-align: center;
     margin-top: 80px;
@@ -144,7 +139,6 @@ button:hover,
     flex-wrap: wrap;
 }
 
-/* SOBRE */
 .sobre {
     display: flex;
     justify-content: center;
@@ -177,7 +171,6 @@ button:hover,
     text-align: center;
 }
 
-/* CTA */
 .cta {
     background: #5c3a2e;
     color: white;
@@ -192,7 +185,6 @@ button:hover,
     margin-bottom: 30px;
 }
 
-/* FOOTER */
 footer {
     background: #3b241d;
     color: #ffe8d6;
@@ -200,7 +192,6 @@ footer {
     padding: 25px;
 }
 
-/* RESPONSIVO */
 @media (max-width: 900px) {
     header {
         padding-bottom: 60px;
