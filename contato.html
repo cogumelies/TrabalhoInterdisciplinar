@@ -50,19 +50,19 @@
 
             <h1>Mensagem</h1>
 
-            <label for="">Nome:</label>
-            <input type="text" required oninvalid="this.setCustomValidity('Digite um nome válido')"
+            <label for="inNomeCont">Nome:</label>
+            <input type="text" id="inNomeCont" required oninvalid="this.setCustomValidity('Digite um nome válido')"
                 oninput="this.setCustomValidity('')">
 
-            <label for="">Email</label>
-            <input type="email" name="email" id="" required oninvalid="this.setCustomValidity('Digite um email válido')"
+            <label for="inEmailCont">Email</label>
+            <input type="email" name="email" id="inEmailCont" required oninvalid="this.setCustomValidity('Digite um email válido')"
                 oninput="this.setCustomValidity('')" pattern="[@]">
 
-            <label for="">Assunto:</label>
-            <input type="text">
+            <label for="inAssuntoCont">Assunto:</label>
+            <input type="text" id="inAssuntoCont">
 
-            <label for="">Mensagem:</label>
-            <textarea name="" id="" cols="30" rows="30"></textarea>
+            <label for="inMsgCont">Mensagem:</label>
+            <textarea id="inMsgCont" cols="15" rows="15"></textarea>
 
 </body>
 
