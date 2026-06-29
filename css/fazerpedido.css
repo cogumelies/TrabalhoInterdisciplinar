@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    font-family:"Playfair Display", serif;
+    background:#fff3e6;
+    color:#3b1f1f;
+}
+
+.topo{
+    background:#6b4535;
+    padding:18px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+.menu a:hover{
+    color:#ffd6e0;
+}
+
+
+main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:50px 20px;
+}
+
+main h1{
+    font-size:60px;
+    color:#5c3a2e;
+    margin-bottom:40px;
+}
+
+.formulario{
+    width:100%;
+    max-width:420px;
+    background:#ffd6e0;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.formulario label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:10px;
+    font-size:16px;
+    font-family:inherit;
+}
+
+.formulario textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+.formulario button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#6b4535;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.formulario button:hover{
+    background:#4d3025;
+}
+
+footer{
+    background:#6b4535;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+@media(max-width:700px){
+
+    main h1{
+        font-size:42px;
+        text-align:center;
+    }
+
+    .formulario{
+        width:100%;
+    }
+
+    .menu{
+        gap:15px;
+    }
+
+}
