@@ -5,69 +5,85 @@
     <meta charset="UTF-8">
     <title>Contato | Chocoholic</title>
     <meta name="description" content="Entre em contato com a Chocoholic">
-
     <link rel="stylesheet" href="css/estilizar3.css">
 </head>
 
 <body>
+
     <header class="topo">
-        <nav class="menu">
+        <nav class="menu"> 
             <a href="land.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="contato.html">Contato</a>
-            <a href="cadastro.html">Cadastro</a>
+            <a href="fazerpedido.html">Fazer Pedido</a>
+            <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
             <a href="sobre.html">Sobre</a>
         </nav>
-        <header>
+        <h1>Fale conosco</h1>
+    </header>
 
-            <h1>Fale conosco</h1>
+    <main class="contato-container">
 
+        <section class="info-contato">
             <h2>Entre em contato</h2>
 
             <p>
-                <strong>Email:</strong>chocoholic@gmail.com</p>
+                <img src="imagens/mail.png" class="icone" alt="email">
+                <strong>Email:</strong> chocoholic@gmail.com</p>
             <p>
-                <strong>Telefone:</strong>27 99837-3872</p>
+                <img src="imagens/phone.png" class="icone" alt="telefone">
+                <strong>Telefone:</strong> 27 99837-3872</p>
             <p>
-                <strong>WhatsApp:</strong>27 99837-3872</p>
+                <img src="imagens/zap.png" class="icone" alt="whatsaap">
+                <strong>WhatsApp:</strong> 27 99837-3872</p>
 
             <h2>Horário de Atendimento</h2>
 
-            <p><strong>Seg a Sexta:</strong> das 8 as 17 horas</p>
-            <p><strong>Não atendemos:</strong>Sábado, Domingo e feriados</p>
+            <p><strong>Seg a Sexta: </strong> das 8 às 17 horas</p>
+            <p><strong>Não atendemos:</strong> sábado, domingo e feriados</p>
 
             <h2>Redes sociais</h2>
 
             <p>
-                 <img src="imagens/ig.png" class="icone">
+                <img src="imagens/ig.png" class="icone" alt="Ícone Instagram">
                 <a href="https://instagram.com" target="_blank">Instagram</a>
             </p>
 
             <p>
+                <img src="imagens/face.png" class="icone" alt="facebook">
                 <a href="https://facebook.com" target="_blank">Facebook</a>
             </p>
 
             <p>
-                <a href="http://x.com">X</a>
+                <img src="imagens/x.png" class="icone" alt="x"> 
+                <a href="http://x.com" target="_blank">X</a>
             </p>
+        </section>
 
-            <h1>Mensagem</h1>
+        <section class="formulario-contato">
+            <h2>Mensagem</h2>
 
-            <label for="">Nome:</label>
-            <input type="text" required oninvalid="this.setCustomValidity('Digite um nome válido')"
-                oninput="this.setCustomValidity('')">
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required oninvalid="this.setCustomValidity('Digite um nome válido')"
+                    oninput="this.setCustomValidity('')">
 
-            <label for="">Email</label>
-            <input type="email" name="email" id="" required oninvalid="this.setCustomValidity('Digite um email válido')"
-                oninput="this.setCustomValidity('')" pattern="[@]">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required
+                    oninvalid="this.setCustomValidity('Digite um email válido')" oninput="this.setCustomValidity('')">
 
-            <label for="">Assunto:</label>
-            <input type="text">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto">
 
-            <label for="">Mensagem:</label>
-            <textarea name="" id="" cols="30" rows="30"></textarea>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" cols="30" rows="8"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
 
 </body>
-
 
 </html>

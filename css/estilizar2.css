@@ -380,3 +380,56 @@ button:hover {
 .card button {
     margin: 15px 10px 20px;
 }
+/* FAQ */
+
+.faq {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.cards-faq {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card-faq {
+    width: 340px;
+    background: #ffd6e0;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    transition: 0.3s;
+}
+
+.card-faq:hover {
+    transform: translateY(-5px);
+}
+
+.card-faq h3 {
+    color: #5c3a2e;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.card-faq p {
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+.card-faq a {
+    color: #5c3a2e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-faq a:hover {
+    text-decoration: underline;
+}
