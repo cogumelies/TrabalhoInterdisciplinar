@@ -69,13 +69,13 @@ function mostrar() {
 
     for (var ind = 0; ind < vetProdutos.length; ind++) {
         listaProdutos.innerHTML +=
-            '<div class="produto">' +
-            '<h3>' + vetProdutos[ind].nome + '</h3>' +
-            '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-            '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-            '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-            '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-            '</div>'
+            `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
     }
 }
 
@@ -98,27 +98,27 @@ function pesquisa() {
     }
     else {
         for (let ind = 0; ind < vetProdutos.length; ind++) {
-            if (vetProdutos[ind].nome.toUpperCase() == pesquisa.toUpperCase()) {
+            if (vetProdutos[ind].nome.toUpperCase().includes(pesquisa.toUpperCase())) {
                 encontrou = true
-
                 listaProdutos.innerHTML +=
-                    '<div class="produto">' +
-                    '<h3>' + vetProdutos[ind].nome + '</h3>' +
-                    '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-                    '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-                    '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-                    '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-                    '</div>';
+                    `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
+
             }
         }
+    }
 
-        if (encontrou == false) {
-            listaProdutos.innerHTML =
-                '<div class="produto">' +
-                '<h3> Produto não encontrado!' +
-                '</div>';
+    if (encontrou == false) {
+        listaProdutos.innerHTML =
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
 
-        }
     }
 }
 
@@ -128,6 +128,7 @@ function filtro() {
     var categoriaFiltro = sltFiltroCategoria.value;
     var tipoFiltro = sltFiltroTipo.value;
     var precoFiltro = Number(inFiltroPreco.value);
+    var encontrado = false
 
     listaProdutos.innerHTML = "";
 
@@ -135,7 +136,7 @@ function filtro() {
         var choc = vetProdutos[ind];
 
         const atendeCategoria = (categoriaFiltro == "todos" || choc.categoria == categoriaFiltro);
-        const atendeTipo = (tipoFiltro == "todos" || chocFiltro.tipo == tipoFiltro);
+        const atendeTipo = (tipoFiltro == "todos" || choc.tipo == tipoFiltro);
         const atendePreco = (precoFiltro == 0 || choc.preco <= precoFiltro);
 
         if (atendeCategoria && atendeTipo && atendePreco) {
@@ -147,12 +148,20 @@ function filtro() {
                     <p>Tipo: ${choc.tipo}</p>
                     <p>Estoque: ${choc.estoque}</p>
                 </div>`;
+            encontrado = true
         }
+    }
+
+    if (encontrado == false) {
+        listaProdutos.innerHTML =
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
     }
 }
 
 btnLimparFiltro.addEventListener("click", limparFiltro);
 
-function limparFiltro(){
+function limparFiltro() {
     mostrar(vetProdutos)
 }

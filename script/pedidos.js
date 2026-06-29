@@ -83,7 +83,7 @@ function pedido() {
         alert("Se a forma de entrega for retirada na loja, não informe endereço!");
         inEndereco.focus();
     }
-    else if (entrega == "Entrega" && endereco == "") {
+    else if (entrega == "Delivery" && endereco == "") {
         alert("Informe seu endereço!");
         inEndereco.focus();
     }
