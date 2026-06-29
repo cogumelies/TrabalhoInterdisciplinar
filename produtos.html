@@ -11,7 +11,6 @@
 
 <body>
 
-
     <header class="topo">
         <nav>
             <a href="land.html">Início</a>
@@ -30,64 +29,55 @@
     </header>
 
     <main>
-       
-        <div class="produtos" id="container-produtos"></div>
 
-        <footer class="rodape">
-            <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
-            <p>Contato: chocoholic@gmail.com</p>
-            <p>© 2026 Chocoholic • Todos os direitos reservados</p>
-        </footer>
+        <section class="areaPesquisa">
+            <label for="inPesquisa">Pesquisar produto:</label>
+            <input type="text" id="inPesquisa" placeholder="Digite o nome do produto">
 
+            <button type="button" id="btnPesquisar">Pesquisar</button>
+        </section>
+
+        <section class="areaFiltros">
+            <h2>Filtrar produtos</h2>
+
+            <label for="sltFiltroCategoria">Categoria:</label>
+            <select id="sltFiltroCategoria">
+                <option value="todos">Todos</option>
+                <option value="Bombons">Bombons</option>
+                <option value="Barras">Barras</option>
+                <option value="Trufas">Trufas</option>
+            </select>
+
+            <label for="sltFiltroTipo">Tipo:</label>
+            <select id="sltFiltroTipo">
+                <option value="todos">Todos</option>
+                <option value="Ao Leite">Ao Leite</option>
+                <option value="Amargo">Amargo</option>
+                <option value="Branco">Branco</option>
+                <option value="Zero Açúcar">Zero Açúcar</option>
+                <option value="Recheado">Recheado</option>
+                <option value="Misto">Misto</option>
+            </select>
+
+            <label for="inFiltroPreco">Preço máximo:</label>
+            <input type="number" id="inFiltroPreco" min="0" step="0.01" placeholder="Ex: 30">
+
+            <button type="button" id="btnFiltrar">Filtrar</button>
+            <button type="button" id="btnLimparFiltro">Mostrar todos</button>
+        </section>
+
+        <section id="listaProdutos" class="listaProdutos"></section>
 
     </main>
-    <section class="areaFiltros">
-        <h2>Filtrar produtos</h2>
-
-        <label for="sltFiltroCategoria">Categoria:</label>
-        <select id="sltFiltroCategoria">
-            <option value="todos">Todos</option>
-            <option value="Bombons">Bombons</option>
-            <option value="Barras">Barras</option>
-            <option value="Trufas">Trufas</option>
-        </select>
-
-        <label for="sltFiltroTipo">Tipo:</label>
-        <select id="sltFiltroTipo">
-            <option value="todos">Todos</option>
-            <option value="Ao Leite">Ao Leite</option>
-            <option value="Amargo">Amargo</option>
-            <option value="Branco">Branco</option>
-            <option value="Zero Açúcar">Zero Açúcar</option>
-            <option value="Recheado">Recheado</option>
-            <option value="Misto">Misto</option>
-        </select>
-
-        <label for="inFiltroPreco">Preço máximo:</label>
-        <input type="number" id="inFiltroPreco" min="0" step="0.01" placeholder="Ex: 30">
-
-        <button type="button" id="btnFiltrar">Filtrar</button>
-        <button type="button" id="btnLimparFiltro">Mostrar todos</button>
-    </section>
-
-    <section id="listaProdutos" class="listaProdutos"></section>
-    <footer>
-        <p>© 2026 Chocoholic - Todos os direitos reservados</p>
 
     <footer class="rodape">
-
         <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
-
         <p>Contato: chocoholic@gmail.com</p>
-
         <p>© 2026 Chocoholic • Todos os direitos reservados</p>
-
     </footer>
 
-
     <script src="./script/produtos.js"></script>
-</body>
 
-</html>
+</body>
 
 </html>
