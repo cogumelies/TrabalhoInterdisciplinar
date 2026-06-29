@@ -69,13 +69,13 @@ function mostrar() {
 
     for (var ind = 0; ind < vetProdutos.length; ind++) {
         listaProdutos.innerHTML +=
-            '<div class="produto">' +
-            '<h3>' + vetProdutos[ind].nome + '</h3>' +
-            '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-            '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-            '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-            '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-            '</div>'
+            `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
     }
 }
 
@@ -100,25 +100,25 @@ function pesquisa() {
         for (let ind = 0; ind < vetProdutos.length; ind++) {
             if (vetProdutos[ind].nome.toUpperCase() == pesquisa.toUpperCase()) {
                 encontrou = true
-
                 listaProdutos.innerHTML +=
-                    '<div class="produto">' +
-                    '<h3>' + vetProdutos[ind].nome + '</h3>' +
-                    '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-                    '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-                    '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-                    '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-                    '</div>';
+                    `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
+
             }
         }
+    }
 
-        if (encontrou == false) {
-            listaProdutos.innerHTML =
-                '<div class="produto">' +
-                '<h3> Produto não encontrado!' +
-                '</div>';
+    if (encontrou == false) {
+        listaProdutos.innerHTML =
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
 
-        }
     }
 }
 
@@ -149,18 +149,19 @@ function filtro() {
                     <p>Estoque: ${choc.estoque}</p>
                 </div>`;
             encontrado = true
-
-        } if (encontrado == false) {
-            listaProdutos.innerHTML =
-                '<div class="produto">' +
-                '<h3> Produto não encontrado!' +
-                '</div>';
         }
     }
 
-    btnLimparFiltro.addEventListener("click", limparFiltro);
-
-    function limparFiltro() {
-        mostrar(vetProdutos)
+    if (encontrado == false) {
+        listaProdutos.innerHTML =
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
     }
+}
+
+btnLimparFiltro.addEventListener("click", limparFiltro);
+
+function limparFiltro() {
+    mostrar(vetProdutos)
 }

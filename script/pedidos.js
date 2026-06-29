@@ -13,6 +13,8 @@ const btnPedido = document.getElementById("btnPedido");
 
 btnPedido.addEventListener("click", pedido)
 
+var dadosCadastrados = []
+
 function pedido() {
     var nomeInf = inNome.value
     var tel = inTelefone.value;
@@ -65,6 +67,8 @@ function pedido() {
     }
     else {
         var outroPedido = confirm("Pedido realizado com sucesso! Deseja fazer outro pedido?")
+        dadosCadastrados.push({nomeInf, tel, produto, quantidade, endereco, pag, entrega})
+        localStorage.setItem("dadosArray", JSON.stringify(dadosCadastrados))
 
         if (outroPedido == true) {
             sltProduto.selectedIndex = 0
@@ -72,7 +76,8 @@ function pedido() {
             sltProduto.focus()
         }
         else {
-                 window.location.href = 'sucesso.html'
+            
+            window.location.href = 'sucesso.html'
         }
     }
 }
