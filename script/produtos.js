@@ -135,7 +135,7 @@ function filtro() {
         var choc = vetProdutos[ind];
 
         const atendeCategoria = (categoriaFiltro == "todos" || choc.categoria == categoriaFiltro);
-        const atendeTipo = (tipoFiltro == "todos" || chocFiltro.tipo == tipoFiltro);
+        const atendeTipo = (tipoFiltro == "todos" || choc.tipo == tipoFiltro);
         const atendePreco = (precoFiltro == 0 || choc.preco <= precoFiltro);
 
         if (atendeCategoria && atendeTipo && atendePreco) {
@@ -147,12 +147,13 @@ function filtro() {
                     <p>Tipo: ${choc.tipo}</p>
                     <p>Estoque: ${choc.estoque}</p>
                 </div>`;
+                
         }
     }
-}
 
-btnLimparFiltro.addEventListener("click", limparFiltro);
+    btnLimparFiltro.addEventListener("click", limparFiltro);
 
-function limparFiltro(){
-    mostrar(vetProdutos)
+    function limparFiltro() {
+        mostrar(vetProdutos)
+    }
 }
