@@ -1,0 +1,32 @@
+:root {
+    --fonte-principal: "playfair display", serif;
+
+    --marrom-principal: #5c3a2e;
+    --marrom-secundario: #7a4b3a;
+    --marrom-hover: #7a4b39;
+    --marrom-escuro: #3d241b;
+    --marrom-texto: #5c3a2e;
+    --marrom-titulo: #3b1f1f;
+    --marrom-footer: #3b241d;
+
+    --fundo-paginas: #ffe8d6;
+    --fundo-main: #ffe8d6;
+    --rosa-claro: #ffd6e0;
+    --creme-claro: #ffe8d6;
+    --branco: white;
+    --preco: #8b3e5f;
+    --hero-texto-claro: #fff5ef;
+
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --sombra-img: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --sombra-form: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --sombra-suave: 0 8px 20px rgba(0, 0, 0, 0.10);
+
+    --raio-5: 5px;
+    --raio-8: 8px;
+    --raio-10: 10px;
+    --raio-12: 12px;
+    --raio-15: 15px;
+    --raio-18: 18px;
+    --raio-20: 20px;
+}
