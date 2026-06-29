@@ -98,7 +98,7 @@ function pesquisa() {
     }
     else {
         for (let ind = 0; ind < vetProdutos.length; ind++) {
-            if (vetProdutos[ind].nome.toUpperCase() == pesquisa.toUpperCase()) {
+            if (vetProdutos[ind].nome.toUpperCase().includes(pesquisa.toUpperCase())) {
                 encontrou = true
                 listaProdutos.innerHTML +=
                     `<div class="produto"> 

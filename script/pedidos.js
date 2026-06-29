@@ -20,8 +20,8 @@ function pedido() {
     var tel = inTelefone.value;
     var produto = sltProduto.value;
     var quantidade = Number(inQuantidade.value);
-    var entregaR = entregaRetirada.value;
-    var entregaD = entregaDelivery.value;
+    //var entregaR = entregaRetirada.value;
+    //var entregaD = entregaDelivery.value;
     var endereco = inEndereco.value;
     var pag = sltPagamento.value;
     var entrega = ""
@@ -57,7 +57,7 @@ function pedido() {
         alert("Se a forma de entrega for retirada na loja, não informe endereço!")
         inEndereco.focus()
     }
-    else if (entrega == "Entrega" && endereco == "") {
+    else if (entrega == "Delivery" && endereco == "") {
         alert("Informe seu endereço!");
         inEndereco.focus();
     }
