@@ -128,6 +128,7 @@ function filtro() {
     var categoriaFiltro = sltFiltroCategoria.value;
     var tipoFiltro = sltFiltroTipo.value;
     var precoFiltro = Number(inFiltroPreco.value);
+    var encontrado = false
 
     listaProdutos.innerHTML = "";
 
@@ -147,7 +148,13 @@ function filtro() {
                     <p>Tipo: ${choc.tipo}</p>
                     <p>Estoque: ${choc.estoque}</p>
                 </div>`;
-                
+            encontrado = true
+
+        } if (encontrado == false) {
+            listaProdutos.innerHTML =
+                '<div class="produto">' +
+                '<h3> Produto não encontrado!' +
+                '</div>';
         }
     }
 
