@@ -1,6 +1,7 @@
 const dadosGuardados = localStorage.getItem("dadosArray");
 const dadosParsed = JSON.parse(dadosGuardados);
 const sctProdutoFinal = document.getElementById("sctProdutoFinal")
+const valorTotal = document.getElementById("valorTotal");
 
 for (ind = 0; ind < dadosParsed.length; ind++) {
     const cardLista = document.createElement("div");
