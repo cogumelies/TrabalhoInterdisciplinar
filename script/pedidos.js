@@ -7,8 +7,11 @@ const entregaDelivery = document.getElementById("entregaDelivery");
 const inEndereco = document.getElementById("inEndereco");
 const sltPagamento = document.getElementById("sltPagamento");
 const btnPedido = document.getElementById("btnPedido");
+const valorTotal = document.getElementById("valorTotal");
 
 btnPedido.addEventListener("click", pedido)
+
+var dadosGuardados = []
 
 function carregarProdutosPedido() {
     var vetProdutos = JSON.parse(localStorage.getItem("produtos")) || [];
@@ -52,6 +55,7 @@ function pedido() {
     var endereco = inEndereco.value;
     var pag = sltPagamento.value;
     var entrega = "";
+    var precoTotal = 0
 
     if (entregaRetirada.checked) {
         entrega = entregaRetirada.value;
@@ -94,13 +98,21 @@ function pedido() {
     else {
         var outroPedido = confirm("Pedido realizado com sucesso! Deseja fazer outro pedido?");
 
+        dadosGuardados.push({ nomeInf, tel, produto, quantidade, entrega, endereco, pag })
+        localStorage.setItem("dadosArray", JSON.stringify(dadosGuardados));
+
         if (outroPedido == true) {
             sltProduto.selectedIndex = 0;
             inQuantidade.value = "";
             sltProduto.focus();
+            valorTotal.innerHTML = "";
         }
         else {
             window.location.href = "sucesso.html";
+        }
+        for (let ind = 0; ind < vetProdutos.length; ind++){
+            precoTotal = vetProdutos[ind].preco * quantidade
+            valorTotal.innerHTML += precoTotal
         }
     }
 }
