@@ -82,7 +82,7 @@ function mostrar() {
 carregarProdutos();
 mostrar();
 
-/* pesquisa e filtros de produtos - ana e jose */
+/* pesquisa e filtros de produtos */
 
 btnPesquisar.addEventListener("click", pesquisa)
 
