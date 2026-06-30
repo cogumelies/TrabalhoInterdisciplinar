@@ -17,7 +17,8 @@
         <a href="fazerpedido.html">Fazer Pedido</a>
         <a href="cadastrodeprodutos.html">Cadastro de Produtos</a>
         <a href="sobre.html">Sobre</a>
-        </nav>
+    </nav>
+
     <main>
         <h1>🍫 Fazer Pedido</h1>
 
@@ -32,13 +33,6 @@
             <label for="sltProduto">Produto desejado:</label><br>
             <select id="sltProduto" name="produtoPedido">
                 <option value="" selected disabled>Selecione:</option>
-                <option value="Caixa Artesanal Bombons Napolitano, 175g"> Caixa Artesanal Bombons Napolitano, 175g </option>
-                <option value="Caixa Coração Bombons ao Leite, 185g"> Caixa Coração Bombons ao Leite, 185g</option>
-                <option value="Caixa Bombons Zero Açúcar, 135g"> Caixa Bombons Zero Açúcar, 135g</option>
-                <option value="Barra Chocolate Recheada Avelã, 100g"> Barra Chocolate Recheada Avelã, 100g </option> 
-                <option value="Barra Chocolate Recheada Morango, 100g">Barra Chocolate Recheada Morango, 100g </option>
-            
-            
             </select>
             <br><br>
 
@@ -50,12 +44,12 @@
             <input type="radio" id="entregaRetirada" name="formaEntrega" value="Retirada">
             <label for="entregaRetirada">Retirada na loja</label><br>
 
-            <input type="radio" id="entregaDelivery" name="formaEntrega" value="Entrega">
-            <label for="entregaDelivery">Entrega</label><br><br>
+            <input type="radio" id="entregaDelivery" name="formaEntrega" value="Delivery">
+            <label for="entregaDelivery">Delivery</label><br><br>
 
             <label for="inEndereco">Endereço:</label><br>
             <input type="text" id="inEndereco" name="enderecoCliente"
-                placeholder="Preencha apenas se escolher entrega">
+                placeholder="Preencha apenas se escolher Delivery">
 
             <label for="sltPagamento">Forma de pagamento:</label><br>
             <select id="sltPagamento" name="formaPagamento">
@@ -63,7 +57,6 @@
                 <option value="Pix">Pix</option>
                 <option value="Cartão de crédito">Cartão de crédito</option>
                 <option value="Cartão de débito">Cartão de débito</option>
-            
             </select>
             <br><br>
 
@@ -72,20 +65,19 @@
                 placeholder="Exemplo: embalagem para presente, horário preferido..."></textarea>
             <br><br>
 
-            <button type="button" id="btnPedido"> Fazer Pedido </button>
+            <button type="button" id="btnPedido">Fazer Pedido</button>
 
-            <p id="outSaida"></p>
+            <section id="outSaida"></section>
 
         </form>
     </main>
 
     <footer class="rodape">
-        <p>📷 Instagram | 🎵 TikTok | 💌 Pinterest</p>
         <p>Contato: chocoholic@gmail.com</p>
         <p>© 2026 Chocoholic • Todos os direitos reservados</p>
     </footer>
 
-    <script src="/script/pedidos.js"></script>
+    <script src="script/pedidos.js"></script>
 </body>
 
 </html>
