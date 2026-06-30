@@ -65,6 +65,10 @@ nav a:hover {
     min-width: 320px;
 }
 
+.info-contato strong {
+    margin-right: 5px;
+}
+
 .info-contato h2 {
     font-size: 34px;
     margin-bottom: 25px;
