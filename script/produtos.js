@@ -1,6 +1,11 @@
 const listaProdutos = document.getElementById("listaProdutos");
 const inPesquisa = document.getElementById("inPesquisa");
 const btnPesquisar = document.getElementById("btnPesquisar");
+const sltFiltroCategoria = document.getElementById("sltFiltroCategoria");
+const sltFiltroTipo = document.getElementById("sltFiltroTipo");
+const inFiltroPreco = document.getElementById("inFiltroPreco");
+const btnFiltrar = document.getElementById("btnFiltrar");
+const btnLimparFiltro = document.getElementById("btnLimparFiltro");
 
 var vetProdutosIniciais = [
     {
@@ -64,13 +69,13 @@ function mostrar() {
 
     for (var ind = 0; ind < vetProdutos.length; ind++) {
         listaProdutos.innerHTML +=
-            '<div class="produto">' +
-            '<h3>' + vetProdutos[ind].nome + '</h3>' +
-            '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-            '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-            '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-            '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-            '</div>'
+            `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
     }
 }
 
@@ -93,30 +98,70 @@ function pesquisa() {
     }
     else {
         for (let ind = 0; ind < vetProdutos.length; ind++) {
-            if (vetProdutos[ind].nome.toUpperCase() == pesquisa.toUpperCase()) {
+            if (vetProdutos[ind].nome.toUpperCase().includes(pesquisa.toUpperCase())) {
                 encontrou = true
-
                 listaProdutos.innerHTML +=
-                    '<div class="produto">' +
-                    '<h3>' + vetProdutos[ind].nome + '</h3>' +
-                    '<p>Preço: R$ ' + vetProdutos[ind].preco.toFixed(2) + '</p>' +
-                    '<p>Categoria: ' + vetProdutos[ind].categoria + '</p>' +
-                    '<p>Tipo: ' + vetProdutos[ind].tipo + '</p>' +
-                    '<p>Estoque: ' + vetProdutos[ind].estoque + '</p>' +
-                    '</div>';
+                    `<div class="produto"> 
+            <h3> ${vetProdutos[ind].nome}</h3>
+            <p>Preço: R$: ${vetProdutos[ind].preco.toFixed(2)}</p> 
+            <p>Categoria: ${vetProdutos[ind].categoria}</p>
+            <p>Tipo: ${vetProdutos[ind].tipo}</p>
+            <p>Estoque: ${vetProdutos[ind].estoque}</p>
+            </div>`
+
             }
         }
+    }
 
-        if (encontrou == false) {
-            listaProdutos.innerHTML = 
+    if (encontrou == false) {
+        listaProdutos.innerHTML =
             '<div class="produto">' +
             '<h3> Produto não encontrado!' +
             '</div>';
-            
-        }
+
     }
 }
 
-function filtro() {
+btnFiltrar.addEventListener("click", filtro);
 
+function filtro() {
+    var categoriaFiltro = sltFiltroCategoria.value;
+    var tipoFiltro = sltFiltroTipo.value;
+    var precoFiltro = Number(inFiltroPreco.value);
+    var encontrado = false
+
+    listaProdutos.innerHTML = "";
+
+    for (let ind = 0; ind < vetProdutos.length; ind++) {
+        var choc = vetProdutos[ind];
+
+        const atendeCategoria = (categoriaFiltro == "todos" || choc.categoria == categoriaFiltro);
+        const atendeTipo = (tipoFiltro == "todos" || choc.tipo == tipoFiltro);
+        const atendePreco = (precoFiltro == 0 || choc.preco <= precoFiltro);
+
+        if (atendeCategoria && atendeTipo && atendePreco) {
+            listaProdutos.innerHTML +=
+                `<div class="produto">
+                    <h3>${choc.nome}</h3>
+                    <p>Preço: R$ ${choc.preco.toFixed(2)}</p>
+                    <p>Categoria: ${choc.categoria}</p>
+                    <p>Tipo: ${choc.tipo}</p>
+                    <p>Estoque: ${choc.estoque}</p>
+                </div>`;
+            encontrado = true
+        }
+    }
+
+    if (encontrado == false) {
+        listaProdutos.innerHTML =
+            '<div class="produto">' +
+            '<h3> Produto não encontrado!' +
+            '</div>';
+    }
+}
+
+btnLimparFiltro.addEventListener("click", limparFiltro);
+
+function limparFiltro() {
+    mostrar(vetProdutos)
 }

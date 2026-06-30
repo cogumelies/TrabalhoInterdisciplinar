@@ -1,4 +1,3 @@
-/* variáveis */
 :root {
     --fonte-principal: "playfair display", serif;
 
@@ -328,7 +327,7 @@ pre {
     box-shadow: var(--sombra-img);
 }
 
-/* benefícios */
+
 .beneficios {
     text-align: center;
 }
@@ -402,26 +401,6 @@ pre {
     box-shadow: var(--sombra-card);
 }
 
-.cta {
-    background: var(--marrom-principal);
-    color: var(--branco);
-    text-align: center;
-    padding: 80px 20px;
-    border-radius: var(--raio-20);
-    margin-top: 70px;
-}
-
-.cta h2 {
-    font-size: 42px;
-    margin: 0 0 20px;
-    color: var(--branco);
-}
-
-.cta p {
-    font-size: 22px;
-    margin: 0 0 30px;
-    color: var(--branco);
-}
 
 form {
     background: var(--rosa-claro);
@@ -567,4 +546,10 @@ iframe {
         justify-content: center;
     }
 
+}
+footer {
+    background: #5c3a2e;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }

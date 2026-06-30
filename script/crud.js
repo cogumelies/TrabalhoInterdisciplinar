@@ -104,8 +104,9 @@ function consultar() {
         inNomeChocolate.focus()
     }
     else {
+        outMensagem.innerHTML = "Produto(s) Encontrado(s)! <br>";
         for (var ind = 0; ind < vetCrud.length; ind++) {
-            if (vetCrud[ind].nome.toUpperCase() == nomeInformado.toUpperCase()) {
+            if (vetCrud[ind].nome.toUpperCase().includes(nomeInformado.toUpperCase())){//(vetCrud[ind].nome.toUpperCase() == nomeInformado.toUpperCase()) {
                 encontrou = true
 
                 sltCategoria.value = vetCrud[ind].categoria;
@@ -113,12 +114,12 @@ function consultar() {
                 inPrecoChocolate.value = vetCrud[ind].preco;
                 sltEstoque.value = vetCrud[ind].estoque
 
-                outMensagem.innerHTML = "Produto Encontrado! <br>" +
+                outMensagem.innerHTML += 
                     "Nome: " + vetCrud[ind].nome + " | " +
                     "Categoria: " + vetCrud[ind].categoria + " | " +
                     "Tipo: " + vetCrud[ind].tipo + " | " +
                     "Preço: R$ " + vetCrud[ind].preco.toFixed(2) + " | " +
-                    "Estoque: " + vetCrud[ind].estoque + "<br>"
+                    "Estoque: " + vetCrud[ind].estoque + "<br><br>"
 
                 inNomeChocolate.value = "";
                 sltCategoria.selectedIndex = 0;
