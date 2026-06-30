@@ -156,20 +156,52 @@ button:hover {
     background: #3d241b;
 }
 
-@media (max-width: 850px) {
+@media(max-width:900px) {
 
-    .contato-container {
+    .hero {
         flex-direction: column;
-        padding: 35px;
+        text-align: center;
     }
 
-    .topo h1 {
-        font-size: 40px;
+    .hero-texto h1 {
+        font-size: 50px;
     }
 
-    .info-contato,
-    .formulario-contato {
+    .titulo-header h1 {
+        font-size: 48px;
+    }
+
+    .hero-texto p,
+    .titulo-header p {
+        font-size: 19px;
+    }
+
+    .beneficios h2,
+    .cta h2 {
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 16px;
+    }
+
+    .hero-texto h1,
+    .titulo-header h1 {
+        font-size: 38px;
+    }
+
+    .card {
         width: 100%;
+    }
+
+    .hero-botoes {
+        justify-content: center;
     }
 
 }

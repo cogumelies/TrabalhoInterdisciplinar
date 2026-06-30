@@ -83,6 +83,7 @@ main {
     background: var(--fundo-main);
     padding: 50px 20px;
     min-height: 100vh;
+    
 }
 
 section {

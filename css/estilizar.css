@@ -203,3 +203,51 @@ footer {
     color: #ffe8d6;
     font-size: 20px;
 }
+@media(max-width:900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 50px;
+    }
+
+    .titulo-header h1 {
+        font-size: 48px;
+    }
+
+    .hero-texto p,
+    .titulo-header p {
+        font-size: 19px;
+    }
+
+    .beneficios h2,
+    .cta h2 {
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 16px;
+    }
+
+    .hero-texto h1,
+    .titulo-header h1 {
+        font-size: 38px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+}
