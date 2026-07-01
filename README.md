@@ -1,5 +1,7 @@
 # Trabalho Interdisciplinar
 
+Integrantes: Ana Lara Perini Calzi, Jose Henrique Pereira, Júlio César Dossi Biasutti
+
 ## Descrição
 
 O **Trabalho Interdisciplinar** é um projeto de desenvolvimento web criado com o objetivo de aplicar os conhecimentos adquiridos nas disciplinas de programação, desenvolvimento de interfaces e lógica computacional. O sistema simula uma plataforma de gerenciamento de produtos e pedidos, oferecendo uma interface simples, intuitiva e organizada para o usuário.
