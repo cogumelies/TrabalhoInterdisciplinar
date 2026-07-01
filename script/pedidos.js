@@ -5,6 +5,8 @@ const inQuantidade = document.getElementById("inQuantidade");
 const entregaRetirada = document.getElementById("entregaRetirada");
 const entregaDelivery = document.getElementById("entregaDelivery");
 const inEndereco = document.getElementById("inEndereco");
+const inObservacao = document.getElementById("inObservacao");
+const outSaida = document.getElementById("outSaida");
 const sltPagamento = document.getElementById("sltPagamento");
 const btnPedido = document.getElementById("btnPedido");
 
