@@ -203,3 +203,84 @@ footer {
     color: #ffe8d6;
     font-size: 20px;
 }
+
+#listaProdutos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.produto {
+    background: #ffd6e0;
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: #3b1f1f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-6px);
+}
+
+.produto h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.produto p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+@media(max-width:900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 50px;
+    }
+
+    .titulo-header h1 {
+        font-size: 48px;
+    }
+
+    .hero-texto p,
+    .titulo-header p {
+        font-size: 19px;
+    }
+
+    .beneficios h2,
+    .cta h2 {
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 16px;
+    }
+
+    .hero-texto h1,
+    .titulo-header h1 {
+        font-size: 38px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+}
