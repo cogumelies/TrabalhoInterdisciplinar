@@ -5,6 +5,8 @@ const inQuantidade = document.getElementById("inQuantidade");
 const entregaRetirada = document.getElementById("entregaRetirada");
 const entregaDelivery = document.getElementById("entregaDelivery");
 const inEndereco = document.getElementById("inEndereco");
+const inObservacao = document.getElementById("inObservacao");
+const outSaida = document.getElementById("outSaida");
 const sltPagamento = document.getElementById("sltPagamento");
 const btnPedido = document.getElementById("btnPedido");
 
@@ -15,40 +17,6 @@ var dadosGuardados = JSON.parse(localStorage.getItem("dadosArray")) || [];
 var resumoPedidos = "";
 var totalGeral = 0;
 var numeroPedido = 0;
-
-function carregarProdutosPedido() {
-    var vetProdutos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-    sltProduto.innerHTML = '<option value="" selected disabled>Selecione:</option>';
-
-    if (vetProdutos.length == 0) {
-        sltProduto.innerHTML +=
-            '<option value="" disabled>Nenhum produto cadastrado</option>';
-    }
-    else {
-        for (var ind = 0; ind < vetProdutos.length; ind++) {
-
-            if (vetProdutos[ind].estoque == "Esgotado") {
-                sltProduto.innerHTML +=
-                    '<option value="' + vetProdutos[ind].nome + '" disabled>' +
-                    vetProdutos[ind].nome + ' | R$ ' +
-                    Number(vetProdutos[ind].preco).toFixed(2) +
-                    ' | ' + vetProdutos[ind].estoque +
-                    '</option>';
-            }
-            else {
-                sltProduto.innerHTML +=
-                    '<option value="' + vetProdutos[ind].nome + '">' +
-                    vetProdutos[ind].nome + ' | R$ ' +
-                    Number(vetProdutos[ind].preco).toFixed(2) +
-                    ' | ' + vetProdutos[ind].estoque +
-                    '</option>';
-            }
-        }
-    }
-}
-
-carregarProdutosPedido();
 
 function carregarProdutosPedido() {
     var vetProdutos = JSON.parse(localStorage.getItem("produtos")) || [];
