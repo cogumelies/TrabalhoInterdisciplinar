@@ -10,7 +10,6 @@ const btnAlterar = document.getElementById("btnAlterar");
 const btnExcluir = document.getElementById("btnExcluir");
 const outMensagem = document.getElementById("outMensagem");
 
-
 btnCadastrar.addEventListener("click", cadastro);
 btnMostrar.addEventListener("click", mostrar);
 btnConsultar.addEventListener("click", consultar);
@@ -85,7 +84,7 @@ function mostrar() {
                 "Categoria: " + vetCrud[ind].categoria + " | " +
                 "Tipo: " + vetCrud[ind].tipo + " | " +
                 "Preço: R$ " + vetCrud[ind].preco.toFixed(2) + " | " +
-                "Estoque: " + vetCrud[ind].estoque + "<br>"
+                "Estoque: " + vetCrud[ind].estoque + "<br><br>"
         }
     }
 }
@@ -156,7 +155,7 @@ function alterar() {
                 "Categoria: " + vetCrud[ind].categoria + " | " +
                 "Tipo: " + vetCrud[ind].tipo + " | " +
                 "Preço: R$ " + Number(vetCrud[ind].preco).toFixed(2) + " | " +
-                "Estoque: " + vetCrud[ind].estoque + " " +
+                "Estoque: " + vetCrud[ind].estoque + " " + "<br>" +
                 '<button type="button" class="btnClickAlt" value="' + ind + '">Selecionar</button><br><br>';
         }
     }
