@@ -5,9 +5,9 @@
     --marrom-secundario: #7a4b3a;
     --marrom-hover: #7a4b39;
     --marrom-escuro: #3d241b;
-    --marrom-texto: #5c3a2e;
+
     --marrom-titulo: #3b1f1f;
-    --marrom-footer: #3b241d;
+    --marrom-footer: #5c3a2e;
 
     --fundo-paginas: #ffe8d6;
     --fundo-main: #ffe8d6;
@@ -42,7 +42,7 @@
 body {
     margin: 0;
     font-family: var(--fonte-principal);
-    background: var(--fundo-paginas);
+    background: #ffe8d6;
     color: var(--marrom-texto);
 }
 
@@ -75,12 +75,12 @@ nav a:visited {
 
 nav a:hover {
     color: var(--rosa-claro);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
 main {
-    background: var(--fundo-main);
+    background:#ffe8d6;
     padding: 50px 20px;
     min-height: 100vh;
     
@@ -128,13 +128,6 @@ button,
 button:hover,
 .btn:hover {
     background: var(--marrom-escuro);
-}
-
-footer {
-    background: var(--marrom-footer);
-    color: var(--creme-claro);
-    text-align: center;
-    padding: 20px;
 }
 
 .img-pequena {
@@ -547,10 +540,4 @@ iframe {
         justify-content: center;
     }
 
-}
-footer {
-    background: #5c3a2e;
-    color: white;
-    text-align: center;
-    padding: 15px;
 }

@@ -31,7 +31,6 @@
     --raio-20: 20px;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -75,7 +74,7 @@ nav a:visited {
 
 nav a:hover {
     color: var(--rosa-claro);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -210,6 +209,7 @@ button[type=button] {
 
 
 }
+
 footer {
     background: #5c3a2e;
     color: white;
