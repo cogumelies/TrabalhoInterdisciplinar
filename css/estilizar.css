@@ -287,7 +287,7 @@ footer {
 
 .areaPesquisa {
     max-width: 700px;
-    margin: 40px 0 20px 40px; /* joga para a esquerda */
+    margin: 40px 0 20px 40px; 
     padding: 0;
     text-align: left;
     background: transparent;
@@ -302,8 +302,7 @@ footer {
 }
 
 .areaPesquisa input {
-    width: 220px; /* diminui a barra */
-    padding: 8px;
+    width: 220px; 
     border: 1px solid #5c3a2e;
     border-radius: 6px;
     font-family: "Playfair Display", serif;
