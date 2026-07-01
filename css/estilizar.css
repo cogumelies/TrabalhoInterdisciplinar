@@ -284,3 +284,94 @@ footer {
         justify-content: center;
     }
 }
+
+.areaPesquisa {
+    max-width: 700px;
+    margin: 40px 0 20px 40px; 
+    padding: 0;
+    text-align: left;
+    background: transparent;
+    box-shadow: none;
+}
+
+.areaPesquisa label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b1f1f;
+    margin-right: 8px;
+}
+
+.areaPesquisa input {
+    width: 220px; 
+    border: 1px solid #5c3a2e;
+    border-radius: 6px;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+}
+
+.areaPesquisa button {
+    background: #5c3a2e;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    margin-left: 6px;
+}
+
+.areaPesquisa button:hover {
+    background: #3d241b;
+}
+.areaFiltros {
+    background: #ffd6e0;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.areaFiltros h2 {
+    font-size: 32px;
+    color: #3b1f1f;
+    margin-bottom: 25px;
+}
+
+.areaFiltros label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b1f1f;
+    margin-right: 6px;
+}
+
+.areaFiltros select,
+.areaFiltros input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin: 8px 10px 15px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    background: white;
+    color: #3b1f1f;
+}
+
+.areaFiltros button {
+    background: #5c3a2e;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.areaFiltros button:hover {
+    background: #3d241b;
+}
