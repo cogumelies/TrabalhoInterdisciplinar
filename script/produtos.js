@@ -46,8 +46,6 @@ var vetProdutosIniciais = [
     }
 ];
 
-
-/* carregar dados no localstorage e mostrar os produtos na tela*/
 var vetProdutos = [];
 
 function carregarProdutos() {
@@ -81,8 +79,6 @@ function mostrar() {
 
 carregarProdutos();
 mostrar();
-
-/* pesquisa e filtros de produtos - ana e jose */
 
 btnPesquisar.addEventListener("click", pesquisa)
 

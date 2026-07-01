@@ -203,6 +203,39 @@ footer {
     color: #ffe8d6;
     font-size: 20px;
 }
+
+#listaProdutos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.produto {
+    background: #ffd6e0;
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: #3b1f1f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-6px);
+}
+
+.produto h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.produto p {
+    font-size: 18px;
+    margin: 8px 0;
+}
 @media(max-width:900px) {
 
     .hero {
